@@ -2,21 +2,25 @@
 title: Getting Started
 ---
 
+# Getting Started
+
 ## Disclaimer
 
 The purpose of this application is to serve as a server for SDKs to ensure compliance with `@arkecosystem/crypto`, this means there can be many breaking changes without any notice.
 
+{% hint style="danger" %}
 **We strongly advise against using this for anything but SDK compliance testing and no support is offered if you do so.**
+{% endhint %}
 
 ## Installation
 
-```sh
+```bash
 yarn global add @arkecosystem/crypto-json-rpc
 ```
 
 ## Usage
 
-```sh
+```bash
 $ crypto-json-rpc
 A JSON-RPC 2.0 specification compliant server to interact with ARK Cryptography.
 
@@ -43,3 +47,4 @@ COMMANDS
 ## Security
 
 If you discover a security vulnerability within this package, please send an e-mail to security@ark.io. All security vulnerabilities will be promptly addressed.
+

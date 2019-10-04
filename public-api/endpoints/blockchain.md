@@ -1,24 +1,24 @@
 ---
-title: "Blockchain"
+title: Blockchain
 ---
 
-## Retrieve Latest Block and Supply
+# Blockchain
 
 Used to get the latest block and supply of the blockchain.
 
-### Endpoint
+## Endpoint
 
-```
+```text
 GET /api/blockchain
 ```
 
-### Examples
+## Examples
 
-```sh
+```bash
 curl https://api.ark.io/api/blockchain
 ```
 
-```json
+```javascript
 {
   "data": {
     "block": {
@@ -29,3 +29,4 @@ curl https://api.ark.io/api/blockchain
   }
 }
 ```
+

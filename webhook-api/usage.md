@@ -2,6 +2,8 @@
 title: Usage
 ---
 
+# Usage
+
 ## Introduction
 
 With the release of ARK Core 2.0, a new feature was introduced, called [Webhooks](https://en.wikipedia.org/wiki/Webhook) which allows you to create more flexible and automated systems while also reducing traffic/load on your server.
@@ -12,7 +14,7 @@ Before we start working on the implementation of a webhook handler, we will take
 
 To guarantee that only your server is allowed to send data to your webhook handler, an authorization token is generated on creation of a webhook. **The generated token will only be returned once and not be visible again.**
 
-To generate an authorization token, you need to [create a webhook](webhook-endpoints#create-a-webhook).
+To generate an authorization token, you need to [create a webhook](https://github.com/ArkEcosystem/gitbooks-api/tree/9815499ca52e615b8de858160da915cd960e6ea3/webhooks/webhook-endpoints/README.md#create-a-webhook).
 
 Lets take the following token as an example `fe944e318edb02b979d6bf0c87978b640c8e74e1cbfe36404386d33a5bbd8b66` which is 64 characters long and breaks down into 2 parts at 32 characters length each.
 
@@ -26,11 +28,7 @@ Now that we know how the token is structured and what it is used for we can cont
 
 A webhook handler is just a simple POST endpoint that you need to implement at the URL you specified when creating a webhook.
 
-<!--DOCUSAURUS_CODE_TABS-->
-
-<!--JavaScript-->
-
-```js
+```javascript
 const webhookToken =
   "fe944e318edb02b979d6bf0c87978b640c8e74e1cbfe36404386d33a5bbd8b66";
 
@@ -62,8 +60,6 @@ server.post("/blocks", jsonParser, (req, res) => {
   return res.status(200).send("Hello Webhook!");
 });
 ```
-
-<!--Go-->
 
 ```go
 package main
@@ -107,10 +103,7 @@ func main() {
     http.HandleFunc("/blocks", validateOrigin(handler))
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
-
 ```
-
-<!--Python-->
 
 ```python
 from flask import Flask, request
@@ -141,18 +134,16 @@ if __name__ == "__main__":
     app.run(debug=True, port=5000)
 ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
-
 Let's break down the steps we took here:
 
-- Grab the `Authorization` header.
-- Create the full token based on the `Authorization` header and `Verification` string.
-- Deny access if the `full token` does not equal the `webhook token`.
-- Log and process the request body if the `full token` is valid.
+* Grab the `Authorization` header.
+* Create the full token based on the `Authorization` header and `Verification` string.
+* Deny access if the `full token` does not equal the `webhook token`.
+* Log and process the request body if the `full token` is valid.
 
 ## Closing
 
-Now you should know enough on how to secure and handle incoming webhooks. Head over to the [API docs](/api/webhooks/) for webhooks to get started.
+Now you should know enough on how to secure and handle incoming webhooks. Head over to the [API docs](https://github.com/ArkEcosystem/gitbooks-api/tree/9815499ca52e615b8de858160da915cd960e6ea3/api/webhooks/README.md) for webhooks to get started.
 
 ## Authentication
 
@@ -160,6 +151,7 @@ To communicate with the Webhooks API, you will need to provide the token you con
 
 ### Headers
 
-| Name          |  Type  | Description                                          | Required |
-| :------------ | :----: | :--------------------------------------------------- | :------: |
-| Authorization | string | The webhook token defined in the node configuration. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| Authorization | string | The webhook token defined in the node configuration. | Yes |
+

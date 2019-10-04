@@ -1,8 +1,10 @@
 ---
-title: "Delegates"
+title: Delegates
 ---
 
-Delegates are regular wallets (addresses) which have registered themselves eligible to become a Delegate by a [registration transaction](/introduction/ark/understanding-transactions-and-block-propagation.html#delegate-registration). If a Delegate is amongst the top 51 highest voted (by staked ARK), it may run a forging Node, which produces a block once every 6.8 minutes, awarding the Delegate two ARK + the transaction fees.
+# Delegates
+
+Delegates are regular wallets \(addresses\) which have registered themselves eligible to become a Delegate by a [registration transaction](https://github.com/ArkEcosystem/gitbooks-api/tree/9815499ca52e615b8de858160da915cd960e6ea3/introduction/ark/understanding-transactions-and-block-propagation.html#delegate-registration). If a Delegate is amongst the top 51 highest voted \(by staked ARK\), it may run a forging Node, which produces a block once every 6.8 minutes, awarding the Delegate two ARK + the transaction fees.
 
 Genesis Delegates are the initial, virtualized Delegates. They were not registered nor voted in, and in the ARK `mainnet` has been replaced by actual Delegates a long time ago.
 
@@ -14,24 +16,24 @@ If a Delegate Node is offline, it is still returned through this API; as the `de
 
 ### Endpoint
 
-```
+```text
 GET /api/delegates
 ```
 
 ### Query Parameters
 
-| Name  | Type     | Description                                   | Required |
-| :---- | :------: | :-------------------------------------------- | :------: |
-| page  |     int  | The number of the page that will be returned. |    No    |
-| limit |     int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Examples
 
-```sh
+```bash
 curl https://api.ark.io/api/delegates
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 100,
@@ -78,11 +80,11 @@ curl https://api.ark.io/api/delegates
 }
 ```
 
-```sh
+```bash
 curl "https://api.ark.io/api/delegates?page=5&limit=2"
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -163,31 +165,31 @@ You can query for a specific delegate by username, address, and public key; thus
 
 ### Endpoint
 
-```
+```text
 GET /api/delegates/{username|address|publicKey}
 ```
 
 ### Path Parameters
 
-| Name                           |  Type  | Description                                     | Required |
-| :----------------------------- | :----: | :---------------------------------------------- | :------: |
-| {username\|address\|publicKey} | string | The identifier of the delegate to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| {username\|address\|publicKey} | string | The identifier of the delegate to be retrieved. | Yes |
 
 ### Examples
 
-```sh
+```bash
 curl https://api.ark.io/api/delegates/boldninja
 ```
 
-```sh
+```bash
 curl https://api.ark.io/api/delegates/ARMy9u1XvrZ124JzQq3oeJpjmBEnYkyU7D
 ```
 
-```sh
+```bash
 curl https://api.ark.io/api/delegates/035217d8ff31d78992e0821667fed6d9298d2b923cd63b650e894e0bf11a0a6d7a
 ```
 
-```json
+```javascript
 {
   "data": {
     "username": "boldninja",
@@ -223,34 +225,34 @@ curl https://api.ark.io/api/delegates/035217d8ff31d78992e0821667fed6d9298d2b923c
 
 ## List All Blocks of a Delegate
 
-The `delegate` resource allows you to obtain blocks from a specific Delegate. This is the equivalent of [searching for blocks](/api/public/v2/blocks.html#search-all-blocks) using the `generatorPublicKey`.
+The `delegate` resource allows you to obtain blocks from a specific Delegate. This is the equivalent of [searching for blocks](https://github.com/ArkEcosystem/gitbooks-api/tree/9815499ca52e615b8de858160da915cd960e6ea3/api/public/v2/blocks.html#search-all-blocks) using the `generatorPublicKey`.
 
 ### Endpoint
 
-```
+```text
 GET /api/delegates/{username|address|publicKey}/blocks
 ```
 
 ### Path Parameters
 
-| Name                           |  Type  | Description                                     | Required |
-| :----------------------------- | :----: | :---------------------------------------------- | :------: |
-| {username\|address\|publicKey} | string | The identifier of the delegate to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| {username\|address\|publicKey} | string | The identifier of the delegate to be retrieved. | Yes |
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Examples
 
-```sh
+```bash
 curl "https://api.ark.io/api/delegates/ALLZ3TQKTaHm2Bte4SrXL9C5cS8ZovqFfZ/blocks?page=5&limit=2"
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -329,30 +331,30 @@ Obtaining the voters of a Delegate is trivial as well. This endpoint returns **a
 
 ### Endpoint
 
-```
+```text
 GET /api/delegates/{username|address|publicKey}/voters
 ```
 
 ### Path Parameters
 
-| Name                           |  Type  | Description                                     | Required |
-| :----------------------------- | :----: | :---------------------------------------------- | :------: |
-| {username\|address\|publicKey} | string | The identifier of the delegate to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| {username\|address\|publicKey} | string | The identifier of the delegate to be retrieved. | Yes |
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Examples
 
-```sh
+```bash
 curl "https://api.ark.io/api/delegates/ALLZ3TQKTaHm2Bte4SrXL9C5cS8ZovqFfZ/voters?page=1&limit=1"
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 1,
@@ -384,51 +386,51 @@ For fine-grained searches, use the `search` endpoint.
 
 ### Endpoint
 
-```
+```text
 POST /api/delegates/search
 ```
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Body Parameters
 
-| Name                |  Type  | Description                                                 | Required |
-| :------------------ | :----: | :---------------------------------------------------------- | :------: |
-| address             | string | The address of the delegate to be retrieved.                |    No    |
-| publicKey           | string | The public key of the delegate to be retrieved.             |    No    |
-| username            | string | The username of the delegate to be retrieved.               |    No    |
-| usernames           | array  | The usernames of the delegates to be retrieved.             |    No    |
-| approval            | object | The approval rate of the delegates to be retrieved.         |    No    |
-| approval.from       | float  | The lower limit of the approval rate.                       |    No    |
-| approval.to         | float  | The upper limit of the approval rate.                       |    No    |
-| forgedFees          | object | The forged fees of the delegates to be retrieved.           |    No    |
-| forgedFees.from     |  int   | The lower limit of the forged fees.                         |    No    |
-| forgedFees.to       |  int   | The upper limit of the forged fees.                         |    No    |
-| forgedRewards       | object | The forged rewards of the delegates to be retrieved.        |    No    |
-| forgedRewards.from  |  int   | The lower limit of the forged rewards.                      |    No    |
-| forgedRewards.to    |  int   | The upper limit of the forged rewards.                      |    No    |
-| forgedTotal         | object | The forged total of the delegates to be retrieved.          |    No    |
-| forgedTotal.from    |  int   | The lower limit of the forged total.                        |    No    |
-| forgedTotal.to      |  int   | The upper limit of the forged total.                        |    No    |
-| producedBlocks      | object | The produced blocks count of the delegates to be retrieved. |    No    |
-| producedBlocks.from |  int   | The lower limit of the produced blocks count.               |    No    |
-| producedBlocks.to   |  int   | The upper limit of the produced blocks count.               |    No    |
-| voteBalance         | object | The vote balance of the delegates to be retrieved.          |    No    |
-| voteBalance.from    |  int   | The lower limit of the vote balance.                        |    No    |
-| voteBalance.to      |  int   | The upper limit of the vote balance.                        |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| address | string | The address of the delegate to be retrieved. | No |
+| publicKey | string | The public key of the delegate to be retrieved. | No |
+| username | string | The username of the delegate to be retrieved. | No |
+| usernames | array | The usernames of the delegates to be retrieved. | No |
+| approval | object | The approval rate of the delegates to be retrieved. | No |
+| approval.from | float | The lower limit of the approval rate. | No |
+| approval.to | float | The upper limit of the approval rate. | No |
+| forgedFees | object | The forged fees of the delegates to be retrieved. | No |
+| forgedFees.from | int | The lower limit of the forged fees. | No |
+| forgedFees.to | int | The upper limit of the forged fees. | No |
+| forgedRewards | object | The forged rewards of the delegates to be retrieved. | No |
+| forgedRewards.from | int | The lower limit of the forged rewards. | No |
+| forgedRewards.to | int | The upper limit of the forged rewards. | No |
+| forgedTotal | object | The forged total of the delegates to be retrieved. | No |
+| forgedTotal.from | int | The lower limit of the forged total. | No |
+| forgedTotal.to | int | The upper limit of the forged total. | No |
+| producedBlocks | object | The produced blocks count of the delegates to be retrieved. | No |
+| producedBlocks.from | int | The lower limit of the produced blocks count. | No |
+| producedBlocks.to | int | The upper limit of the produced blocks count. | No |
+| voteBalance | object | The vote balance of the delegates to be retrieved. | No |
+| voteBalance.from | int | The lower limit of the vote balance. | No |
+| voteBalance.to | int | The upper limit of the vote balance. | No |
 
 ### Examples
 
-```sh
+```bash
 curl --data 'producedBlocks={ "from": 41100 }' https://api.ark.io/api/delegates/search
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 8,
@@ -472,3 +474,4 @@ curl --data 'producedBlocks={ "from": 41100 }' https://api.ark.io/api/delegates/
   ]
 }
 ```
+

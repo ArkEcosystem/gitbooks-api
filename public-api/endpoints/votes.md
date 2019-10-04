@@ -1,8 +1,10 @@
 ---
-title: "Votes"
+title: Votes
 ---
 
-A vote is a specific type of transaction (type 3). A wallet votes on a different wallet, which has registered itself eligible to become a Delegate. Wallets may vote for themselves.
+# Votes
+
+A vote is a specific type of transaction \(type 3\). A wallet votes on a different wallet, which has registered itself eligible to become a Delegate. Wallets may vote for themselves.
 
 > Users are often confused by the voting mechanism and the fee associated with a vote. A Delegate does **not** receive ARK from their voters, nor is the number of blocks they produce proportional to their voting weight.
 
@@ -12,20 +14,20 @@ All voting transactions may be obtained through this API. This is the equivalent
 
 ### Endpoint
 
-```
+```text
 GET /api/votes
 ```
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -70,19 +72,19 @@ Votes may be retrieved using their transaction ID. Note the `asset` field, which
 
 ### Endpoint
 
-```
+```text
 GET /api/votes/{id}
 ```
 
 ### Query Parameters
 
-| Name |  Type  | Description                                 | Required |
-| :--- | :----: | :------------------------------------------ | :------: |
-| id   | string | The identifier of the vote to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | The identifier of the vote to be retrieved. | Yes |
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "id": "beb8dd43c640f562704090159154b2742afba7eacada9e8edee447e34e7675c6",
@@ -108,3 +110,4 @@ GET /api/votes/{id}
   }
 }
 ```
+

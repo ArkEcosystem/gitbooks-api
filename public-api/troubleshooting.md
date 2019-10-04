@@ -1,6 +1,8 @@
 ---
-title: "Troubleshooting"
+title: Troubleshooting
 ---
+
+# Troubleshooting
 
 If you're encountering some oddities in the API, here's a list of resolutions to some of the problems you may be experiencing.
 
@@ -14,6 +16,7 @@ To troubleshoot, ensure you're querying a node that is in sync, and third-party 
 
 ## Why Am I Not Seeing All My Results?
 
-Most API calls accessing a list of resources (e.g., blocks and transactions) support pagination. If you're making requests and receiving an incomplete set of results, you're probably only seeing the first page. You'll need to request the remaining pages to get more results.
+Most API calls accessing a list of resources \(e.g., blocks and transactions\) support pagination. If you're making requests and receiving an incomplete set of results, you're probably only seeing the first page. You'll need to request the remaining pages to get more results.
 
 It's important not to try to guess the format of the pagination URL. Not every API call uses the same structure. Instead, extract the pagination information from the `meta` field, which is sent with every request.
+

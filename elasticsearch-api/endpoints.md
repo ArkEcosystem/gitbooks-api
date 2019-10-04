@@ -2,23 +2,23 @@
 title: Endpoints
 ---
 
-## Search
+# Endpoints
 
 The ElasticSearch integration comes with a HTTP server that allows you to perform granular searches with a variety of arguments.
 
-### Endpoint
+## Endpoint
 
 ```text
 POST /
 ```
 
-### Query Parameters
+## Query Parameters
 
 The search endpoint supports over 30 parameters that can be directly passed to ElasticSearch. Take a look at the [search](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_search) documentation of the official ElasticSearch client for JavaScript to see what each argument is used for.
 
-### Response
+## Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 1
@@ -42,3 +42,4 @@ The search endpoint supports over 30 parameters that can be directly passed to E
   ]
 }
 ```
+

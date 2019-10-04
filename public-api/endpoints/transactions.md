@@ -1,28 +1,30 @@
 ---
-title: "Transactions"
+title: Transactions
 ---
 
-Transactions are signed, serialized payloads; batched together to form a [block](/public/endpoints/blocks).
+# Transactions
+
+Transactions are signed, serialized payloads; batched together to form a block.
 
 ## Create a Transaction
 
-Creating the correct payload for a transaction is non-trivial, as it requires cryptographic functions and a specific serialization protocol. Our [crypto SDKs](/sdk/cryptography/usage.html) provide the functionality needed in most major programming languages. You can read more about it in the [send transaction](/guidebook/developer/send-transaction.html) section.
+Creating the correct payload for a transaction is non-trivial, as it requires cryptographic functions and a specific serialization protocol. Our [crypto SDKs](https://sdk.ark.dev) provide the functionality needed in most major programming languages. You can read more about it in the send transaction section.
 
 ### Endpoint
 
-```
+```text
 POST /api/transactions
 ```
 
 ### Body Parameters
 
-| Name         | Type  | Description                         | Required |
-| :----------- | :---: | :---------------------------------- | :------: |
-| transactions | array | The list of transactions to create. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| transactions | array | The list of transactions to create. | Yes |
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "accept": [
@@ -48,19 +50,19 @@ Obtaining a transaction by ID does not require advanced logic; as the API does n
 
 ### Endpoint
 
-```
+```text
 GET /api/transactions/{id}
 ```
 
 ### Path Parameters
 
-| Name |  Type  | Description                                        | Required |
-| :--- | :----: | :------------------------------------------------- | :------: |
-| id   | string | The identifier of the transaction to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | The identifier of the transaction to be retrieved. | Yes |
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "id": "5c6ce775447a5acd22050d72e2615392494953bb1fb6287e9ffb3c33eaeb79aa",
@@ -87,23 +89,23 @@ The paginated API is used to query for multiple transactions. You can apply _fil
 
 ### Endpoint
 
-```
+```text
 GET /api/transactions
 ```
 
 ### Query Parameters
 
-| Name    | Type  | Description                                   | Required |
-| :------ | :---: | :-------------------------------------------- | :------: |
-| page    |  int  | The number of the page that will be returned. |    No    |
-| limit   |  int  | The number of resources per page.             |    No    |
-| type    |  int  | The transaction type to be retrieved.         |    No    |
-| blockId |  int  | The block id to be retrieved.                 |    No    |
-| id      |  int  | The transaction id to be retrieved.           |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
+| type | int | The transaction type to be retrieved. | No |
+| blockId | int | The block id to be retrieved. | No |
+| id | int | The transaction id to be retrieved. | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -144,20 +146,20 @@ Unconfirmed transactions have not been incorporated in the blockchain, but resid
 
 ### Endpoint
 
-```
+```text
 GET /api/transactions/unconfirmed/
 ```
 
 ### Query Parameters
 
-| Name  | Type   | Description                                   | Required |
-| :---- | :----: | :-------------------------------------------- | :------: |
-| page  |   int  | The number of the page that will be returned. |    No    |
-| limit |   int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 5,
@@ -265,19 +267,19 @@ As with confirmed transactions, you may query for unconfirmed transactions direc
 
 ### Endpoint
 
-```
+```text
 GET /api/transactions/unconfirmed/{id}
 ```
 
 ### Path Parameters
 
-| Name |  Type  | Description                                        | Required |
-| :--- | :----: | :------------------------------------------------- | :------: |
-| id   | string | The identifier of the transaction to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | The identifier of the transaction to be retrieved. | Yes |
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "id": "c94504293d23e3be535a049fdfacba95147f2a87a4ef6682c56801da96befce0",
@@ -301,48 +303,48 @@ GET /api/transactions/unconfirmed/{id}
 
 ## Search for Transactions
 
-For fine-grained searches, use the `search` endpoint. Note that unless you use specific body parameters, the response might contain a large number of transactions (hundreds of thousands). It is best to filter as many transactions node side, instead of dissecting the response client side.
+For fine-grained searches, use the `search` endpoint. Note that unless you use specific body parameters, the response might contain a large number of transactions \(hundreds of thousands\). It is best to filter as many transactions node side, instead of dissecting the response client side.
 
 ### Endpoint
 
-```
+```text
 POST /api/transactions/search
 ```
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Body Parameters
 
-| Name            |  Type  | Description | Required |
-| :-------------- | :----: | :---------- | :------: |
-| orderBy         | string | ...         |    No    |
-| id              | string | ...         |    No    |
-| blockId         | string | ...         |    No    |
-| type            |  int   | ...         |    No    |
-| version         |  int   | ...         |    No    |
-| senderPublicKey | string | ...         |    No    |
-| senderId        | string | ...         |    No    |
-| recipientId     | string | ...         |    No    |
-| ownerId         | string | ...         |    No    |
-| vendorFieldHex  | string | ...         |    No    |
-| timestamp       | object | ...         |    No    |
-| timestamp.from  |  int   | ...         |    No    |
-| timestamp.to    |  int   | ...         |    No    |
-| amount          | object | ...         |    No    |
-| amount.from     |  int   | ...         |    No    |
-| amount.to       |  int   | ...         |    No    |
-| fee             | object | ...         |    No    |
-| fee.from        |  int   | ...         |    No    |
-| fee.to          |  int   | ...         |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| orderBy | string | ... | No |
+| id | string | ... | No |
+| blockId | string | ... | No |
+| type | int | ... | No |
+| version | int | ... | No |
+| senderPublicKey | string | ... | No |
+| senderId | string | ... | No |
+| recipientId | string | ... | No |
+| ownerId | string | ... | No |
+| vendorFieldHex | string | ... | No |
+| timestamp | object | ... | No |
+| timestamp.from | int | ... | No |
+| timestamp.to | int | ... | No |
+| amount | object | ... | No |
+| amount.from | int | ... | No |
+| amount.to | int | ... | No |
+| fee | object | ... | No |
+| fee.from | int | ... | No |
+| fee.to | int | ... | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "Count": 1,
@@ -383,13 +385,13 @@ The transaction types are network specific. ARK currently supports eight differe
 
 ### Endpoint
 
-```
+```text
 GET /api/transactions/types
 ```
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "Transfer": 0,
@@ -405,19 +407,19 @@ GET /api/transactions/types
 }
 ```
 
-## Get Transaction Fees (Non-Dynamic)
+## Get Transaction Fees \(Non-Dynamic\)
 
-The static transaction fees are significantly higher than the dynamic transaction fees. Use the [node resource](/api/public/v2/node.html#retrieve-the-configuration) to find dynamic fees, and prefer using these.
+The static transaction fees are significantly higher than the dynamic transaction fees. Use the [node resource](https://github.com/ArkEcosystem/gitbooks-api/tree/9815499ca52e615b8de858160da915cd960e6ea3/api/public/v2/node.html#retrieve-the-configuration) to find dynamic fees, and prefer using these.
 
 ### Endpoint
 
-```
+```text
 GET /api/transactions/fees
 ```
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "transfer": 10000000,
@@ -432,3 +434,4 @@ GET /api/transactions/fees
   }
 }
 ```
+

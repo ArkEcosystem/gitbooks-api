@@ -1,6 +1,8 @@
 ---
-title: "Blocks"
+title: Blocks
 ---
+
+# Blocks
 
 Blocks are added every eight seconds to the blockchain by a Delegate Node. Due to network/technical errors, a Delegate might miss a block. The time between two blocks is then 16 seconds, as the round continues to the next Delegate.
 
@@ -8,30 +10,30 @@ All state changes to the blockchain are in the form of blocks; they contain a se
 
 ## List All Blocks
 
-The Public API may be used to query for blocks. This dataset contains millions of blocks; thus for analytical purposes, we recommend you use the [Elasticsearch](/elasticsearch/getting-started) plugin or query the database directly.
+The Public API may be used to query for blocks. This dataset contains millions of blocks; thus for analytical purposes, we recommend you use the [Elasticsearch](https://github.com/ArkEcosystem/gitbooks-api/tree/9815499ca52e615b8de858160da915cd960e6ea3/elasticsearch/getting-started/README.md) plugin or query the database directly.
 
 ### Endpoint
 
-```
+```text
 GET /api/blocks
 ```
 
 ### Query Parameters
 
-| Name   |  Type  | Description                                   | Required |
-| :----- | :----: | :-------------------------------------------- | :------: |
-| page   |  int   | The number of the page that will be returned. |    No    |
-| limit  |  int   | The number of resources per page.             |    No    |
-| id     | string | The identifier of the block to be retrieved.  |    No    |
-| height |  int   | The height of the block to be retrieved.      |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
+| id | string | The identifier of the block to be retrieved. | No |
+| height | int | The height of the block to be retrieved. | No |
 
 ### Examples
 
-```sh
+```bash
 curl https://api.ark.io/api/blocks?limit=2
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -104,11 +106,11 @@ curl https://api.ark.io/api/blocks?limit=2
 }
 ```
 
-```sh
+```bash
 curl https://api.ark.io/api/blocks?height=7000042
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 1,
@@ -161,27 +163,27 @@ _When comparing the order of transactions and blocks, prefer using the `block.he
 
 ### Endpoint
 
-```
+```text
 GET /api/blocks/{id|height}
 ```
 
 ### Path Parameters
 
-| Name         |  Type  | Description                                    | Required |
-| :----------- | :----: | :--------------------------------------------- | :------: |
-| {id\|height} | string | The ID or height of the block to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| {id\|height} | string | The ID or height of the block to be retrieved. | Yes |
 
 ### Examples
 
-```sh
+```bash
 curl https://api.ark.io/api/blocks/15447090855222023348
 ```
 
-```sh
+```bash
 curl https://api.ark.io/api/blocks/7000042
 ```
 
-```json
+```javascript
 {
   "data": {
     "id": "15447090855222023348",
@@ -220,30 +222,30 @@ Instead of deserializing the block's payload; you can also obtain the transactio
 
 ### Endpoint
 
-```
+```text
 GET /api/blocks/{id|height}/transactions
 ```
 
 ### Path Parameters
 
-| Name         |  Type  | Description                                  | Required |
-| :----------- | :----: | :------------------------------------------- | :------: |
-| {id\|height} | string | The identifier of the block to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| {id\|height} | string | The identifier of the block to be retrieved. | Yes |
 
 ### Query Parameters
 
-| Name  | Type  | Description                                   | Required |
-| :---- | :---: | :-------------------------------------------- | :------: |
-| page  |  int  | The number of the page that will be returned. |    No    |
-| limit |  int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Examples
 
-```sh
+```bash
 curl https://api.ark.io/api/blocks/12079944220667996670/transactions
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -302,56 +304,56 @@ It is possible to filter for specifics blocks using the search resource. Filteri
 
 ### Endpoint
 
-```
+```text
 POST /api/blocks/search
 ```
 
 ### Query Parameters
 
-| Name  | Type  | Description                                   | Required |
-| :---- | :---: | :-------------------------------------------- | :------: |
-| page  |  int  | The number of the page that will be returned. |    No    |
-| limit |  int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Body Parameters
 
-| Name                      |  Type  | Description                                                                                                                      | Required |
-| :------------------------ | :----: | :------------------------------------------------------------------------------------------------------------------------------- | :------: |
-| id                        | string | ID of the block.                                                                                                                 |    No    |
-| version                   |  int   | Version of the block.                                                                                                            |    No    |
-| previousBlock             |  int   | ID of the previous block.                                                                                                        |    No    |
-| payloadHash               | string | Hash of the payload.                                                                                                             |    No    |
-| generatorPublicKey        | string | Public key of the forger who forged the block.                                                                                   |    No    |
-| blockSignature            | string | Signature of the block.                                                                                                          |    No    |
-| timestamp                 | object | Timestamp range for block creation time. Measured in number of seconds since the genesis block.                                  |    No    |
-| timestamp.from            |  int   | Block creation time must be bigger or equal to this.                                                                             |    No    |
-| timestamp.to              |  int   | Block creation time must be smaller or equal to this.                                                                            |    No    |
-| height                    | object | Height range of the block. The genesis block has height 1.                                                                       |    No    |
-| height.from               |  int   | Block height must be bigger or equal to this.                                                                                    |    No    |
-| height.to                 |  int   | Block height must be smaller or equal to this.                                                                                   |    No    |
-| numberOfTransactions      | object | Ranage for number of transactions contained in the block.                                                                        |    No    |
-| numberOfTransactions.from |  int   | The number of transactions in the block must be bigger or equal to this.                                                         |    No    |
-| numberOfTransactions.to   |  int   | The number of transactions in the block must be smaller or equal to this.                                                        |    No    |
-| totalAmount               | object | Range for total amount transacted in the block, including block reward, transaction fees and transactions' amounts. In arktoshi. |    No    |
-| totalAmount.from          |  int   | Block total amount must be bigger or equal to this.                                                                              |    No    |
-| totalAmount.to            |  int   | Block total amount must be smaller or equal to this.                                                                             |    No    |
-| totalFee                  | object | Range for the sum of all transactions' fees in the block. In arktoshi.                                                           |    No    |
-| totalFee.from             |  int   | The sum of all transactions' fees in the block must be bigger or equal to this.                                                  |    No    |
-| totalFee.to               |  int   | The sum of all transactions' fees in the block must be smaller or equal to this.                                                 |    No    |
-| reward                    | object | Range for block reward. In arktoshi.                                                                                             |    No    |
-| reward.from               |  int   | Block reward must be bigger or equal to this.                                                                                    |    No    |
-| reward.to                 |  int   | Block reward must be smaller or equal to this.                                                                                   |    No    |
-| payloadLength             | object | Range for block payload length. In bytes.                                                                                        |    No    |
-| payloadLength.from        |  int   | Block payload length must be bigger or equal to this.                                                                            |    No    |
-| payloadLength.to          |  int   | Block payload length must be smaller or equal to this.                                                                           |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | ID of the block. | No |
+| version | int | Version of the block. | No |
+| previousBlock | int | ID of the previous block. | No |
+| payloadHash | string | Hash of the payload. | No |
+| generatorPublicKey | string | Public key of the forger who forged the block. | No |
+| blockSignature | string | Signature of the block. | No |
+| timestamp | object | Timestamp range for block creation time. Measured in number of seconds since the genesis block. | No |
+| timestamp.from | int | Block creation time must be bigger or equal to this. | No |
+| timestamp.to | int | Block creation time must be smaller or equal to this. | No |
+| height | object | Height range of the block. The genesis block has height 1. | No |
+| height.from | int | Block height must be bigger or equal to this. | No |
+| height.to | int | Block height must be smaller or equal to this. | No |
+| numberOfTransactions | object | Ranage for number of transactions contained in the block. | No |
+| numberOfTransactions.from | int | The number of transactions in the block must be bigger or equal to this. | No |
+| numberOfTransactions.to | int | The number of transactions in the block must be smaller or equal to this. | No |
+| totalAmount | object | Range for total amount transacted in the block, including block reward, transaction fees and transactions' amounts. In arktoshi. | No |
+| totalAmount.from | int | Block total amount must be bigger or equal to this. | No |
+| totalAmount.to | int | Block total amount must be smaller or equal to this. | No |
+| totalFee | object | Range for the sum of all transactions' fees in the block. In arktoshi. | No |
+| totalFee.from | int | The sum of all transactions' fees in the block must be bigger or equal to this. | No |
+| totalFee.to | int | The sum of all transactions' fees in the block must be smaller or equal to this. | No |
+| reward | object | Range for block reward. In arktoshi. | No |
+| reward.from | int | Block reward must be bigger or equal to this. | No |
+| reward.to | int | Block reward must be smaller or equal to this. | No |
+| payloadLength | object | Range for block payload length. In bytes. | No |
+| payloadLength.from | int | Block payload length must be bigger or equal to this. | No |
+| payloadLength.to | int | Block payload length must be smaller or equal to this. | No |
 
 ### Examples
 
-```sh
+```bash
 curl --data 'numberOfTransactions={ "from": 100, "to": 110 }' --data 'timestamp={ "from": 60000000 }' https://api.ark.io/api/blocks/search?limit=2
 ```
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -423,3 +425,4 @@ curl --data 'numberOfTransactions={ "from": 100, "to": 110 }' --data 'timestamp=
   ]
 }
 ```
+

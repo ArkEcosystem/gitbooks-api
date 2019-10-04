@@ -1,6 +1,8 @@
 ---
-title: "Wallets"
+title: Wallets
 ---
+
+# Wallets
 
 Wallets are addresses containing, or previously having contained ARK. A wallet's public key may be unknown to the network, in that case, it is referred to as a `cold wallet`.
 
@@ -10,20 +12,20 @@ A paginated API is provided to obtain all wallets, including empty ones.
 
 ### Endpoint
 
-```
+```text
 GET /api/wallets
 ```
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -54,19 +56,19 @@ Specific wallets can be obtained either by their `publicKey` or `address`.
 
 ### Endpoint
 
-```
+```text
 GET /api/wallets/{id}
 ```
 
 ### Path Parameters
 
-| Name |  Type  | Description                                   | Required |
-| :--- | :----: | :-------------------------------------------- | :------: |
-| id   | string | The identifier of the wallet to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | The identifier of the wallet to be retrieved. | Yes |
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "address": "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
@@ -85,26 +87,26 @@ All transactions belonging to a wallet can be obtained using this API. Equivalen
 
 ### Endpoint
 
-```
+```text
 GET /api/wallets/{id}/transactions
 ```
 
 ### Path Parameters
 
-| Name |  Type  | Description                                   | Required |
-| :--- | :----: | :-------------------------------------------- | :------: |
-| id   | string | The identifier of the wallet to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | The identifier of the wallet to be retrieved. | Yes |
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Response
 
-```json
+```javascript
 {
     "meta": {
         "count": 2,
@@ -146,26 +148,26 @@ Incoming transactions can be obtained as well, Equivalent to `transactions/searc
 
 ### Endpoint
 
-```
+```text
 GET /api/wallets/{id}/transactions/received
 ```
 
 ### Path Parameters
 
-| Name |  Type  | Description                                   | Required |
-| :--- | :----: | :-------------------------------------------- | :------: |
-| id   | string | The identifier of the wallet to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | The identifier of the wallet to be retrieved. | Yes |
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Response
 
-```json
+```javascript
 {
     "meta": {
         "count": 2,
@@ -209,26 +211,26 @@ The inverse of `transactions/received`.
 
 ### Endpoint
 
-```
+```text
 GET /api/wallets/{id}/transactions/sent
 ```
 
 ### Path Parameters
 
-| Name |  Type  | Description                                   | Required |
-| :--- | :----: | :-------------------------------------------- | :------: |
-| id   | string | The identifier of the wallet to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | The identifier of the wallet to be retrieved. | Yes |
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -274,26 +276,26 @@ Returns all votes made by the wallet. Often users create a new wallet instead of
 
 ### Endpoint
 
-```
+```text
 GET /api/wallets/{id}/votes
 ```
 
 ### Path Parameters
 
-| Name |  Type  | Description                                   | Required |
-| :--- | :----: | :-------------------------------------------- | :------: |
-| id   | string | The identifier of the wallet to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| id | string | The identifier of the wallet to be retrieved. | Yes |
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -338,20 +340,20 @@ Sort the wallets by their balance. Most top wallets belong to exchanges and the 
 
 ### Endpoint
 
-```
+```text
 GET /api/wallets/top
 ```
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 100,
@@ -391,36 +393,36 @@ Searching for specific wallets is possible as well. A direct database query usua
 
 ### Endpoint
 
-```
+```text
 POST /api/wallets/search
 ```
 
 ### Query Parameters
 
-| Name  | Type | Description                                   | Required |
-| :---- | :--: | :-------------------------------------------- | :------: |
-| page  | int  | The number of the page that will be returned. |    No    |
-| limit | int  | The number of resources per page.             |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
 
 ### Body Parameters
 
-| Name             |  Type  | Description | Required |
-| :--------------- | :----: | :---------- | :------: |
-| address          | string | ...         |    No    |
-| publicKey        | string | ...         |    No    |
-| secondPublicKey  | string | ...         |    No    |
-| vote             | string | ...         |    No    |
-| username         | string | ...         |    No    |
-| balance          | object | ...         |    No    |
-| balance.from     |  int   | ...         |    No    |
-| balance.to       |  int   | ...         |    No    |
-| votebalance      | object | ...         |    No    |
-| votebalance.from |  int   | ...         |    No    |
-| votebalance.to   |  int   | ...         |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| address | string | ... | No |
+| publicKey | string | ... | No |
+| secondPublicKey | string | ... | No |
+| vote | string | ... | No |
+| username | string | ... | No |
+| balance | object | ... | No |
+| balance.from | int | ... | No |
+| balance.to | int | ... | No |
+| votebalance | object | ... | No |
+| votebalance.from | int | ... | No |
+| votebalance.to | int | ... | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "count": 2,
@@ -444,3 +446,4 @@ POST /api/wallets/search
   ]
 }
 ```
+

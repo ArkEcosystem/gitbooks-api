@@ -2,29 +2,31 @@
 title: Transactions
 ---
 
+# Transactions
+
 ## Sign a transaction with a passphrase
 
 ### Method
 
-```sh
+```bash
 transactions.sign
 ```
 
 ### Parameters
 
-| Name               |  Type  | Description                                  | Required |
-| :----------------- | :----: | :------------------------------------------- | :------: |
-| jsonrpc            | string | The protocol version.                        |   Yes    |
-| id                 | string | The identifier of the request.               |   Yes    |
-| method             | string | The method name.                             |   Yes    |
-| params             | object | The parameters of the request.               |   Yes    |
-| params.network     | string | The network of the transaction.              |   Yes    |
-| params.transaction | object | The transaction to be signed.                |   Yes    |
-| params.passphrase  | string | The passphrase used to sign the transaction. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the transaction. | Yes |
+| params.transaction | object | The transaction to be signed. | Yes |
+| params.passphrase | string | The passphrase used to sign the transaction. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "unique-request-id",
@@ -48,7 +50,7 @@ transactions.sign
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -62,25 +64,25 @@ transactions.sign
 
 ### Method
 
-```sh
+```bash
 transactions.secondSign
 ```
 
 ### Parameters
 
-| Name               |  Type  | Description                                         | Required |
-| :----------------- | :----: | :-------------------------------------------------- | :------: |
-| jsonrpc            | string | The protocol version.                               |   Yes    |
-| id                 | string | The identifier of the request.                      |   Yes    |
-| method             | string | The method name.                                    |   Yes    |
-| params             | object | The parameters of the request.                      |   Yes    |
-| params.network     | string | The network of the transaction.                     |   Yes    |
-| params.transaction | object | The transaction to be signed.                       |   Yes    |
-| params.passphrase  | string | The passphrase used to second sign the transaction. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the transaction. | Yes |
+| params.transaction | object | The transaction to be signed. | Yes |
+| params.passphrase | string | The passphrase used to second sign the transaction. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "unique-request-id",
@@ -104,7 +106,7 @@ transactions.secondSign
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -118,25 +120,25 @@ transactions.secondSign
 
 ### Method
 
-```sh
+```bash
 transactions.multiSign
 ```
 
 ### Parameters
 
-| Name               |  Type  | Description                                        | Required |
-| :----------------- | :----: | :------------------------------------------------- | :------: |
-| jsonrpc            | string | The protocol version.                              |   Yes    |
-| id                 | string | The identifier of the request.                     |   Yes    |
-| method             | string | The method name.                                   |   Yes    |
-| params             | object | The parameters of the request.                     |   Yes    |
-| params.network     | string | The network of the transaction.                    |   Yes    |
-| params.transaction | object | The transaction to be signed.                      |   Yes    |
-| params.passphrase  | string | The passphrase used to multi sign the transaction. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the transaction. | Yes |
+| params.transaction | object | The transaction to be signed. | Yes |
+| params.passphrase | string | The passphrase used to multi sign the transaction. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "unique-request-id",
@@ -160,7 +162,7 @@ transactions.multiSign
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -174,24 +176,24 @@ transactions.multiSign
 
 ### Method
 
-```sh
+```bash
 transactions.serialize
 ```
 
 ### Parameters
 
-| Name               |  Type  | Description                                  | Required |
-| :----------------- | :----: | :------------------------------------------- | :------: |
-| jsonrpc            | string | The protocol version.                        |   Yes    |
-| id                 | string | The identifier of the request.               |   Yes    |
-| method             | string | The method name.                             |   Yes    |
-| params             | object | The parameters of the request.               |   Yes    |
-| params.network     | string | The network of the transaction.              |   Yes    |
-| params.transaction | object | The transaction to be serialized with AIP11. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the transaction. | Yes |
+| params.transaction | object | The transaction to be serialized with AIP11. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "unique-request-id",
@@ -216,7 +218,7 @@ transactions.serialize
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -230,24 +232,24 @@ transactions.serialize
 
 ### Method
 
-```sh
+```bash
 transactions.deserialize
 ```
 
 ### Parameters
 
-| Name               |  Type  | Description                                    | Required |
-| :----------------- | :----: | :--------------------------------------------- | :------: |
-| jsonrpc            | string | The protocol version.                          |   Yes    |
-| id                 | string | The identifier of the request.                 |   Yes    |
-| method             | string | The method name.                               |   Yes    |
-| params             | object | The parameters of the request.                 |   Yes    |
-| params.network     | string | The network of the transaction.                |   Yes    |
-| params.transaction | string | The transaction to be deserialized with AIP11. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the transaction. | Yes |
+| params.transaction | string | The transaction to be deserialized with AIP11. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "unique-request-id",
@@ -261,7 +263,7 @@ transactions.deserialize
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -286,24 +288,24 @@ transactions.deserialize
 
 ### Method
 
-```sh
+```bash
 transactions.verify
 ```
 
 ### Parameters
 
-| Name               |  Type  | Description                     | Required |
-| :----------------- | :----: | :------------------------------ | :------: |
-| jsonrpc            | string | The protocol version.           |   Yes    |
-| id                 | string | The identifier of the request.  |   Yes    |
-| method             | string | The method name.                |   Yes    |
-| params             | object | The parameters of the request.  |   Yes    |
-| params.network     | string | The network of the transaction. |   Yes    |
-| params.transaction | object | The transaction to be verified. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the transaction. | Yes |
+| params.transaction | object | The transaction to be verified. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "unique-request-id",
@@ -328,7 +330,7 @@ transactions.verify
 
 ### Response
 
-```json
+```javascript
 {"id": "unique-request-id",
 ```
 
@@ -336,24 +338,24 @@ transactions.verify
 
 ### Method
 
-```sh
+```bash
 transactions.verifyHash
 ```
 
 ### Parameters
 
-| Name               |  Type  | Description                                         | Required |
-| :----------------- | :----: | :-------------------------------------------------- | :------: |
-| jsonrpc            | string | The protocol version.                               |   Yes    |
-| id                 | string | The identifier of the request.                      |   Yes    |
-| method             | string | The method name.                                    |   Yes    |
-| params             | object | The parameters of the request.                      |   Yes    |
-| params.network     | string | The network of the transaction.                     |   Yes    |
-| params.transaction | object | The transaction of which the hash will be verified. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the transaction. | Yes |
+| params.transaction | object | The transaction of which the hash will be verified. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "unique-request-id",
@@ -378,7 +380,7 @@ transactions.verifyHash
 
 ### Response
 
-```json
+```javascript
 {"id": "unique-request-id",
 ```
 
@@ -386,25 +388,25 @@ transactions.verifyHash
 
 ### Method
 
-```sh
+```bash
 transactions.verifySecondSignature
 ```
 
 ### Parameters
 
-| Name               |  Type  | Description                                                     | Required |
-| :----------------- | :----: | :-------------------------------------------------------------- | :------: |
-| jsonrpc            | string | The protocol version.                                           |   Yes    |
-| id                 | string | The identifier of the request.                                  |   Yes    |
-| method             | string | The method name.                                                |   Yes    |
-| params             | object | The parameters of the request.                                  |   Yes    |
-| params.network     | string | The network of the transaction.                                 |   Yes    |
-| params.transaction | object | The transaction of which the second signature will be verified. |   Yes    |
-| params.publicKey   | string | The public key of the wallet which signed the transaction.      |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the transaction. | Yes |
+| params.transaction | object | The transaction of which the second signature will be verified. | Yes |
+| params.publicKey | string | The public key of the wallet which signed the transaction. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "id": "unique-request-id",
@@ -431,6 +433,7 @@ transactions.verifySecondSignature
 
 ### Response
 
-```json
+```javascript
 {"id": "unique-request-id",
 ```
+

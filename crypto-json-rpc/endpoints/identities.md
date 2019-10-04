@@ -2,28 +2,30 @@
 title: Identities
 ---
 
+# Identities
+
 ## Generate an address from a passphrase
 
 ### Method
 
-```sh
+```bash
 identities.address.fromPassphrase
 ```
 
 ### Parameters
 
-| Name              |  Type  | Description                                 | Required |
-| :---------------- | :----: | :------------------------------------------ | :------: |
-| jsonrpc           | string | The protocol version.                       |   Yes    |
-| id                | string | The identifier of the request.              |   Yes    |
-| method            | string | The method name.                            |   Yes    |
-| params            | object | The parameters of the request.              |   Yes    |
-| params.network    | string | The network of the address to be retrieved. |   Yes    |
-| params.passphrase | string | The passphrase of address to be retrieved.  |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the address to be retrieved. | Yes |
+| params.passphrase | string | The passphrase of address to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.address.fromPassphrase",
@@ -37,7 +39,7 @@ identities.address.fromPassphrase
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -51,24 +53,24 @@ identities.address.fromPassphrase
 
 ### Method
 
-```sh
+```bash
 identities.address.fromPublicKey
 ```
 
 ### Parameters
 
-| Name             |  Type  | Description                                 | Required |
-| :--------------- | :----: | :------------------------------------------ | :------: |
-| jsonrpc          | string | The protocol version.                       |   Yes    |
-| id               | string | The identifier of the request.              |   Yes    |
-| method           | string | The method name.                            |   Yes    |
-| params           | object | The parameters of the request.              |   Yes    |
-| params.network   | string | The network of the address to be retrieved. |   Yes    |
-| params.publicKey | string | The public key of address to be retrieved.  |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the address to be retrieved. | Yes |
+| params.publicKey | string | The public key of address to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.address.fromPublicKey",
@@ -82,7 +84,7 @@ identities.address.fromPublicKey
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -94,35 +96,35 @@ identities.address.fromPublicKey
 
 ## Generate an address from a private key
 
-| Name              |  Type  | Description                                 | Required |
-| :---------------- | :----: | :------------------------------------------ | :------: |
-| jsonrpc           | string | The protocol version.                       |   Yes    |
-| id                | string | The identifier of the request.              |   Yes    |
-| method            | string | The method name.                            |   Yes    |
-| params            | object | The parameters of the request.              |   Yes    |
-| params.network    | string | The network of the address to be retrieved. |   Yes    |
-| params.privateKey | string | The private key of address to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the address to be retrieved. | Yes |
+| params.privateKey | string | The private key of address to be retrieved. | Yes |
 
 ### Method
 
-```sh
+```bash
 identities.address.fromPrivateKey
 ```
 
 ### Parameters
 
-| Name              |  Type  | Description                                 | Required |
-| :---------------- | :----: | :------------------------------------------ | :------: |
-| jsonrpc           | string | The protocol version.                       |   Yes    |
-| id                | string | The identifier of the request.              |   Yes    |
-| method            | string | The method name.                            |   Yes    |
-| params            | object | The parameters of the request.              |   Yes    |
-| params.network    | string | The network of the address to be retrieved. |   Yes    |
-| params.passphrase | string | The passphrase of address to be retrieved.  |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the address to be retrieved. | Yes |
+| params.passphrase | string | The passphrase of address to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.address.fromPrivateKey",
@@ -136,7 +138,7 @@ identities.address.fromPrivateKey
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -148,35 +150,35 @@ identities.address.fromPrivateKey
 
 ## Generate an address from a multi signature asset
 
-| Name              |  Type  | Description                                 | Required |
-| :---------------- | :----: | :------------------------------------------ | :------: |
-| jsonrpc           | string | The protocol version.                       |   Yes    |
-| id                | string | The identifier of the request.              |   Yes    |
-| method            | string | The method name.                            |   Yes    |
-| params            | object | The parameters of the request.              |   Yes    |
-| params.network    | string | The network of the address to be retrieved. |   Yes    |
-| params.passphrase | string | The passphrase of address to be retrieved.  |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the address to be retrieved. | Yes |
+| params.passphrase | string | The passphrase of address to be retrieved. | Yes |
 
 ### Method
 
-```sh
+```bash
 identities.address.fromMultiSignatureAsset
 ```
 
 ### Parameters
 
-| Name                       |  Type  | Description                                           | Required |
-| :------------------------- | :----: | :---------------------------------------------------- | :------: |
-| jsonrpc                    | string | The protocol version.                                 |   Yes    |
-| id                         | string | The identifier of the request.                        |   Yes    |
-| method                     | string | The method name.                                      |   Yes    |
-| params                     | object | The parameters of the request.                        |   Yes    |
-| params.network             | string | The network of the address to be retrieved.           |   Yes    |
-| params.multiSignatureAsset | string | The multi signature asset of address to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the address to be retrieved. | Yes |
+| params.multiSignatureAsset | string | The multi signature asset of address to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.address.fromMultiSignatureAsset",
@@ -197,7 +199,7 @@ identities.address.fromMultiSignatureAsset
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -211,24 +213,24 @@ identities.address.fromMultiSignatureAsset
 
 ### Method
 
-```sh
+```bash
 identities.publicKey.fromPassphrase
 ```
 
 ### Parameters
 
-| Name              |  Type  | Description                                    | Required |
-| :---------------- | :----: | :--------------------------------------------- | :------: |
-| jsonrpc           | string | The protocol version.                          |   Yes    |
-| id                | string | The identifier of the request.                 |   Yes    |
-| method            | string | The method name.                               |   Yes    |
-| params            | object | The parameters of the request.                 |   Yes    |
-| params.network    | string | The network of the public key to be retrieved. |   Yes    |
-| params.passphrase | string | The passphrase of public key to be retrieved.  |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the public key to be retrieved. | Yes |
+| params.passphrase | string | The passphrase of public key to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.publicKey.fromPassphrase",
@@ -242,7 +244,7 @@ identities.publicKey.fromPassphrase
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -256,24 +258,24 @@ identities.publicKey.fromPassphrase
 
 ### Method
 
-```sh
+```bash
 identities.publicKey.fromMultiSignatureAsset
 ```
 
 ### Parameters
 
-| Name                       |  Type  | Description                                              | Required |
-| :------------------------- | :----: | :------------------------------------------------------- | :------: |
-| jsonrpc                    | string | The protocol version.                                    |   Yes    |
-| id                         | string | The identifier of the request.                           |   Yes    |
-| method                     | string | The method name.                                         |   Yes    |
-| params                     | object | The parameters of the request.                           |   Yes    |
-| params.network             | string | The network of the public key to be retrieved.           |   Yes    |
-| params.multiSignatureAsset | string | The multi signature asset of public key to be retrieved. |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the public key to be retrieved. | Yes |
+| params.multiSignatureAsset | string | The multi signature asset of public key to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.publicKey.fromMultiSignatureAsset",
@@ -294,7 +296,7 @@ identities.publicKey.fromMultiSignatureAsset
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -308,24 +310,24 @@ identities.publicKey.fromMultiSignatureAsset
 
 ### Method
 
-```sh
+```bash
 identities.publicKey.fromWIF
 ```
 
 ### Parameters
 
-| Name           |  Type  | Description                                    | Required |
-| :------------- | :----: | :--------------------------------------------- | :------: |
-| jsonrpc        | string | The protocol version.                          |   Yes    |
-| id             | string | The identifier of the request.                 |   Yes    |
-| method         | string | The method name.                               |   Yes    |
-| params         | object | The parameters of the request.                 |   Yes    |
-| params.network | string | The network of the public key to be retrieved. |   Yes    |
-| params.wif     | string | The WIF of public key to be retrieved.         |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the public key to be retrieved. | Yes |
+| params.wif | string | The WIF of public key to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.publicKey.fromWIF",
@@ -339,7 +341,7 @@ identities.publicKey.fromWIF
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -353,24 +355,24 @@ identities.publicKey.fromWIF
 
 ### Method
 
-```sh
+```bash
 identities.privateKey.fromPassphrase
 ```
 
 ### Parameters
 
-| Name              |  Type  | Description                                     | Required |
-| :---------------- | :----: | :---------------------------------------------- | :------: |
-| jsonrpc           | string | The protocol version.                           |   Yes    |
-| id                | string | The identifier of the request.                  |   Yes    |
-| method            | string | The method name.                                |   Yes    |
-| params            | object | The parameters of the request.                  |   Yes    |
-| params.network    | string | The network of the private key to be retrieved. |   Yes    |
-| params.passphrase | string | The passphrase of private key to be retrieved.  |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the private key to be retrieved. | Yes |
+| params.passphrase | string | The passphrase of private key to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.privateKey.fromPassphrase",
@@ -384,7 +386,7 @@ identities.privateKey.fromPassphrase
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -398,24 +400,24 @@ identities.privateKey.fromPassphrase
 
 ### Method
 
-```sh
+```bash
 identities.privateKey.fromWIF
 ```
 
 ### Parameters
 
-| Name           |  Type  | Description                                     | Required |
-| :------------- | :----: | :---------------------------------------------- | :------: |
-| jsonrpc        | string | The protocol version.                           |   Yes    |
-| id             | string | The identifier of the request.                  |   Yes    |
-| method         | string | The method name.                                |   Yes    |
-| params         | object | The parameters of the request.                  |   Yes    |
-| params.network | string | The network of the private key to be retrieved. |   Yes    |
-| params.wif     | string | The WIF of private key to be retrieved.         |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the private key to be retrieved. | Yes |
+| params.wif | string | The WIF of private key to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.privateKey.fromWIF",
@@ -429,7 +431,7 @@ identities.privateKey.fromWIF
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -443,24 +445,24 @@ identities.privateKey.fromWIF
 
 ### Method
 
-```sh
+```bash
 identities.wif.fromPassphrase
 ```
 
 ### Parameters
 
-| Name              |  Type  | Description                             | Required |
-| :---------------- | :----: | :-------------------------------------- | :------: |
-| jsonrpc           | string | The protocol version.                   |   Yes    |
-| id                | string | The identifier of the request.          |   Yes    |
-| method            | string | The method name.                        |   Yes    |
-| params            | object | The parameters of the request.          |   Yes    |
-| params.network    | string | The network of the WIF to be retrieved. |   Yes    |
-| params.passphrase | string | The passphrase of WIF to be retrieved.  |   Yes    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| jsonrpc | string | The protocol version. | Yes |
+| id | string | The identifier of the request. | Yes |
+| method | string | The method name. | Yes |
+| params | object | The parameters of the request. | Yes |
+| params.network | string | The network of the WIF to be retrieved. | Yes |
+| params.passphrase | string | The passphrase of WIF to be retrieved. | Yes |
 
 ### Request
 
-```json
+```javascript
 {
   "jsonrpc": "2.0",
   "method": "identities.wif.fromPassphrase",
@@ -474,7 +476,7 @@ identities.wif.fromPassphrase
 
 ### Response
 
-```json
+```javascript
 {
   "id": "unique-request-id",
   "jsonrpc": "2.0",
@@ -483,3 +485,4 @@ identities.wif.fromPassphrase
   }
 }
 ```
+

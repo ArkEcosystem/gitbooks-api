@@ -1,6 +1,9 @@
 ---
 title: Getting Started
+description: Public API Getting Started Guide
 ---
+
+# Getting Started
 
 > All HTTP requests have to be sent with the `Content-Type: application/json` header. If the header is not present it will result in malformed responses or request rejections.
 
@@ -15,3 +18,4 @@ Requests that return multiple items will be paginated to 100 items by default. Y
 ## Public Testing Relay
 
 If you are not running a relay yourself you can use [https://api.ark.io/api/](https://api.ark.io/api/) to test API calls. Happy developing!
+

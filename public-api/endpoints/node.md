@@ -1,6 +1,8 @@
 ---
-title: "Node"
+title: Node
 ---
+
+# Node
 
 The `node` resource is useful for service discovery, health checks, and obtaining network configurations, such as fees, API, and token information.
 
@@ -8,17 +10,17 @@ The `node` resource is useful for service discovery, health checks, and obtainin
 
 ## Retrieve the Configuration
 
-Used to access a Node's configuration and the network it is attached to (identified by the `nethash`).
+Used to access a Node's configuration and the network it is attached to \(identified by the `nethash`\).
 
 ### Endpoint
 
-```
+```text
 GET /api/node/configuration
 ```
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "nethash": "578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23",
@@ -86,13 +88,13 @@ Used to access a Node's configuration for the `@arkecosystem/crypto` package tha
 
 ### Endpoint
 
-```
+```text
 GET /api/node/configuration/crypto
 ```
 
 ### Response
 
-```json
+```javascript
 {
    "data":{
       "exceptions":{},
@@ -266,19 +268,19 @@ Used to access a Node's fee statistics.
 
 ### Endpoint
 
-```
+```text
 GET /api/node/fees
 ```
 
 ### Query Parameters
 
-| Name | Type | Description                                | Required |
-| :--- | :--: | :----------------------------------------- | :------: |
-| days | int  | The number of days which will be regarded. |    No    |
+| Name | Type | Description | Required |
+| :--- | :---: | :--- | :---: |
+| days | int | The number of days which will be regarded. | No |
 
 ### Response
 
-```json
+```javascript
 {
   "meta": {
     "days": 7
@@ -310,13 +312,13 @@ The status allows for health checking, showing if the node is in sync with the n
 
 ### Endpoint
 
-```
+```text
 GET /api/node/status
 ```
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "synced": false,
@@ -332,13 +334,13 @@ The `syncing` resource is very much alike `node/status`, providing information o
 
 ### Endpoint
 
-```
+```text
 GET /api/node/syncing
 ```
 
 ### Response
 
-```json
+```javascript
 {
   "data": {
     "syncing": true,
@@ -348,3 +350,4 @@ GET /api/node/syncing
   }
 }
 ```
+
