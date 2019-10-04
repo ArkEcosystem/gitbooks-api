@@ -1,7 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
-description: Exchange JSON-RPC Getting
+description: Exchange JSON-RPC Getting Started Guide
 ---
 
 # Getting Started

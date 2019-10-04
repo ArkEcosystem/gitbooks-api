@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+description: Elasticsearch API Getting Started Guide
 ---
 
 # Getting Started

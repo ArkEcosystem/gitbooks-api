@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+description: Crypto JSON-RPC Getting Started Guide
 ---
 
 # Getting Started
