@@ -2,19 +2,19 @@
 
 * [Introduction](README.md)
 
-## Public API
+## Public REST API
 
-* [Getting Started](public-api/getting-started.md)
-* [Endpoints](public-api/endpoints/README.md)
-  * [Blockchain](public-api/endpoints/blockchain.md)
-  * [Blocks](public-api/endpoints/blocks.md)
-  * [Delegates](public-api/endpoints/delegates.md)
-  * [Node](public-api/endpoints/node.md)
-  * [Peers](public-api/endpoints/peers.md)
-  * [Transactions](public-api/endpoints/transactions.md)
-  * [Votes](public-api/endpoints/votes.md)
-  * [Wallets](public-api/endpoints/wallets.md)
-* [Troubleshooting](public-api/troubleshooting.md)
+* [Getting Started](public-rest-api/getting-started.md)
+* [Endpoints](public-rest-api/endpoints/README.md)
+  * [Blockchain](public-rest-api/endpoints/blockchain.md)
+  * [Blocks](public-rest-api/endpoints/blocks.md)
+  * [Delegates](public-rest-api/endpoints/delegates.md)
+  * [Node](public-rest-api/endpoints/node.md)
+  * [Peers](public-rest-api/endpoints/peers.md)
+  * [Transactions](public-rest-api/endpoints/transactions.md)
+  * [Votes](public-rest-api/endpoints/votes.md)
+  * [Wallets](public-rest-api/endpoints/wallets.md)
+* [Troubleshooting](public-rest-api/troubleshooting.md)
 
 ## Webhook API
 
