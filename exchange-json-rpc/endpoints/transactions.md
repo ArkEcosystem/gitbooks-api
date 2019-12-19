@@ -94,7 +94,7 @@ transactions.broadcast
 | params | object | The parameters of the request. | Yes |
 | params.transactions | array | The list of transactions to be broadcasted. | Yes |
 
-### Response
+### Request
 
 ```javascript
 {
@@ -229,7 +229,7 @@ transactions.list
 | params.bip38 | string | The bip38 of the sender. | Yes |
 | params.userId | string | The identifier of the sender. | Yes |
 
-### Response
+### Request
 
 ```javascript
 {
