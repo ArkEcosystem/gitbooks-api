@@ -22,14 +22,6 @@
 * [Usage](webhook-api/usage.md)
 * [Endpoints](webhook-api/endpoints.md)
 
-## Exchange JSON-RPC
-
-* [Getting Started](exchange-json-rpc/getting-started.md)
-* [Endpoints](exchange-json-rpc/endpoints/README.md)
-  * [Blocks](exchange-json-rpc/endpoints/blocks.md)
-  * [Transactions](exchange-json-rpc/endpoints/transactions.md)
-  * [Wallets](exchange-json-rpc/endpoints/wallets.md)
-
 ## Crypto JSON-RPC
 
 * [Getting Started](crypto-json-rpc/getting-started.md)
