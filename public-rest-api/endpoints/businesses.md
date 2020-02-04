@@ -18,7 +18,7 @@ curl http://dexplorer.ark.io/api/businesses
 | :--- | :--- | :--- | :--- |
 | page | int | The number of the page that will be returned. | false |
 | limit | int | The number of resources per page. | false |
-| orderBy | string | Type by which it orders bridgechains. | false |
+| orderBy | string | Type by which it orders businesses. | false |
 | publicKey | string | The publicKey of a transaction which submitted the business. | false |
 | isResigned | boolean | If business is resigned or not. | false |
 
@@ -177,7 +177,18 @@ POST /api/businesses/search
 | page | int | The number of the page that will be returned. | false |
 | limit | int | The number of resources per page. | false |
 | orderBy | string | Type by which it orders business. | false |
-| isResigned | boolean | If business is resigned or not. | false |
+
+### Body parameters
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| address | string | ... | false |
+| publicKey | string | ... | false |
+| name | string | ... | false |
+| website | string | ... | false |
+| vat | string | ... | false |
+| repository | string | ... | false |
+| isResigned | boolean | ... | false |
 
 ### Response
 
