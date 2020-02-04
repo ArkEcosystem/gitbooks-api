@@ -6,9 +6,12 @@
 
 * [Getting Started](public-rest-api/getting-started.md)
 * [Endpoints](public-rest-api/endpoints/README.md)
+  * [Bridgechains](public-rest-api/endpoints/bridgechains.md)
+  * [Businesses](public-rest-api/endpoints/businesses.md)
   * [Blockchain](public-rest-api/endpoints/blockchain.md)
   * [Blocks](public-rest-api/endpoints/blocks.md)
   * [Delegates](public-rest-api/endpoints/delegates.md)
+  * [Locks](public-rest-api/endpoints/locks.md)
   * [Node](public-rest-api/endpoints/node.md)
   * [Peers](public-rest-api/endpoints/peers.md)
   * [Transactions](public-rest-api/endpoints/transactions.md)
