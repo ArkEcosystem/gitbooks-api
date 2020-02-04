@@ -125,5 +125,9 @@ GET api/locks/search
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| page | int |  |  |
+| page | int | The number of the page that will be returned. | false |
+| limit | int | The number of resources per page. | false |
+| orderBy | string | Type by which it orders locks. | false |
+
+
 
