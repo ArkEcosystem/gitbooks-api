@@ -146,6 +146,12 @@ Specific wallets can be obtained either by their `publicKey` or `address`.
 GET /api/wallets/{id}
 ```
 
+### Example
+
+```bash
+curl http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+```
+
 ### Path Parameters
 
 | Name | Type | Description | Required |
@@ -156,14 +162,21 @@ GET /api/wallets/{id}
 
 ```javascript
 {
-  "data": {
-    "address": "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
-    "publicKey": "0306950dae7158103814e3828b1ab97a87dbb3680db1b4c6998b8208865b2f9db7",
-    "username": "bongoninja",
-    "secondPublicKey": null,
-    "balance": 12534670000000,
-    "isDelegate": true
-  }
+    "data": {
+        "address": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+        "publicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+        "nonce": "208",
+        "balance": "7919999400",
+        "attributes": {
+            "htlc": {
+                "locks": {},
+                "lockedBalance": "0"
+            }
+        },
+        "lockedBalance": "0",
+        "isDelegate": false,
+        "isResigned": false
+    }
 }
 ```
 
@@ -175,6 +188,12 @@ All transactions belonging to a wallet can be obtained using this API. Equivalen
 
 ```text
 GET /api/wallets/{id}/transactions
+```
+
+### Example
+
+```bash
+curl http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions
 ```
 
 ### Path Parameters
@@ -189,41 +208,74 @@ GET /api/wallets/{id}/transactions
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| id | string | ... | No |
+| blockId | string | ... | No |
+| type | int | ... | No |
+| typeGroup | int | ... | No |
+| version | int | ... | No |
+| timestamp | int | ... | No |
+| nonce | int | ... | No |
+| amount | int | ... | No |
+| fee | int | ... | No |
+| vendorField | string | ... | No |
 
 ### Response
 
 ```javascript
 {
     "meta": {
-        "count": 2,
-        "pageCount": 127430,
-        "totalCount": 254860,
-        "next": "/v2/wallets/boldninja/transactions?page=2",
+        "totalCountIsEstimate": false,
+        "count": 100,
+        "pageCount": 3,
+        "totalCount": 209,
+        "next": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions?transform=true&page=2&limit=100",
         "previous": null,
-        "self": "/v2/wallets/boldninja/transactions?page=1",
-        "first": "/v2/wallets/boldninja/transactions?page=1",
-        "last": "/v2/wallets/boldninja/transactions?page=127430"
+        "self": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions?transform=true&page=1&limit=100",
+        "first": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions?transform=true&page=1&limit=100",
+        "last": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions?transform=true&page=3&limit=100"
     },
     "data": [
         {
-            "id": "261ec03a90e8c287fb2dcbb35bb8a842fe5ef1c7a6425319da7aa123c48dd929",
-            "blockId": "15006101391552623930",
-            "version": 1,
+            "id": "f9cb2fb63f53ee947442de910c8f87cb96189899edc6de630b66cbf864fc6fc4",
+            "blockId": "8115a42a8f869af2592ccd2ed8a4d5bb5039c12ddc5af10e09b557719b95fe97",
+            "version": 2,
             "type": 0,
-            "amount": 100000000,
-            "fee": 10000000,
-            "sender": "DHWBaG44rstymZjWFU4b7BiuTZjiKxfJpL",
-            "recipient": "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
-            "signature": "3045022100d7b59289b9576978fc0cbfea2f7f490409ef9455f2c4d28cc49f155c9ed69d6002206a32c4b668050f81b789b49fe5c29164872f9f1db63d7ba8604a6296f183a18a",
-            "signSignature": "3045022100dae0598ff7dcab0184d36e3d8313da17401893b2b6b476276412f2682e66c34402205df085dae213c561e5db293cd5bc8930f6343783a99ce48c349e92abfd2e2fa1",
-            "vendorField": ":bongocrazy"
-            "confirmations": 347019,
+            "typeGroup": 1,
+            "amount": "100",
+            "fee": "10000000",
+            "sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "senderPublicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+            "recipient": "DBoKkzKAT6YdXhyv1mvcKEg97JxiRqMuK2",
+            "signature": "8246cca14ac3e4158db03c4f881294acc903d32ed11ee06cb29e00b4b9c687e323f4a4ee117a65d2b79d7f0e833f4e36a14fe9a968d48baa6bb301fb1f4eb8e1",
+            "confirmations": 159,
             "timestamp": {
-                "epoch": 51704908,
-                "unix": 1541806108,
-                "human": "2018-11-09T23:28:28.000Z"
-            }
-        }
+                "epoch": 90793352,
+                "unix": 1580894552,
+                "human": "2020-02-05T09:22:32.000Z"
+            },
+            "nonce": "208"
+        },
+        {
+            "id": "9b4d9b4630c1bf763889d5b8457dc9c949ede2b2c746bba39d5183fd49199880",
+            "blockId": "0d2ac82ffdb189cdc61a1bb09ba040056dd31c92364016dc1d6aa13baf66b8bd",
+            "version": 2,
+            "type": 0,
+            "typeGroup": 1,
+            "amount": "100",
+            "fee": "10000000",
+            "sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "senderPublicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+            "recipient": "DBoKkzKAT6YdXhyv1mvcKEg97JxiRqMuK2",
+            "signature": "1681979fb7c365655b6c14ad03a26f1968e3f588870d7b3f4acd33958c488620e2832f2f8c0d89652a2baff233cb7c8187243e44fa1125e91f23969e24f71bef",
+            "confirmations": 326,
+            "timestamp": {
+                "epoch": 90792008,
+                "unix": 1580893208,
+                "human": "2020-02-05T09:00:08.000Z"
+            },
+            "nonce": "207"
+        },
+        ...
     ]
 }
 ```
@@ -238,6 +290,12 @@ Incoming transactions can be obtained as well, Equivalent to `transactions/searc
 GET /api/wallets/{id}/transactions/received
 ```
 
+### Example
+
+```bash
+curl http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/received
+```
+
 ### Path Parameters
 
 | Name | Type | Description | Required |
@@ -250,41 +308,78 @@ GET /api/wallets/{id}/transactions/received
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| id | string | ... | No |
+| blockId | string | ... | No |
+| type | int | ... | No |
+| typeGroup | int | ... | No |
+| version | int | ... | No |
+| senderPublicKey | string | ... | No |
+| senderId | string | ... | No |
+| timestamp | int | ... | No |
+| nonce | int | ... | No |
+| amount | int | ... | No |
+| fee | int | ... | No |
+| vendorField | string | ... | No |
 
 ### Response
 
 ```javascript
 {
     "meta": {
-        "count": 2,
-        "pageCount": 4,
-        "totalCount": 8,
-        "next": "/v2/wallets/boldninja/transactions/received?page=2",
+        "totalCountIsEstimate": false,
+        "count": 100,
+        "pageCount": 3,
+        "totalCount": 202,
+        "next": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/received?transform=true&page=2&limit=100",
         "previous": null,
-        "self": "/v2/wallets/boldninja/transactions/received?page=1",
-        "first": "/v2/wallets/boldninja/transactions/received?page=1",
-        "last": "/v2/wallets/boldninja/transactions/received?page=4"
+        "self": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/received?transform=true&page=1&limit=100",
+        "first": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/received?transform=true&page=1&limit=100",
+        "last": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/received?transform=true&page=3&limit=100"
     },
     "data": [
         {
-            "id": "261ec03a90e8c287fb2dcbb35bb8a842fe5ef1c7a6425319da7aa123c48dd929",
-            "blockId": "15006101391552623930",
-            "version": 1,
+            "id": "8821874e61aed3b19073f9327662ce40f377a6d90b2a9783b88ddd94ddfe63f4",
+            "blockId": "3b2980271dc59bde0dd229fd3cb96d29dcc37dcf19fb2932613c7640ef6d171e",
+            "version": 2,
             "type": 0,
-            "amount": 100000000,
-            "fee": 10000000,
-            "sender": "DHWBaG44rstymZjWFU4b7BiuTZjiKxfJpL",
-            "recipient": "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
-            "signature": "3045022100d7b59289b9576978fc0cbfea2f7f490409ef9455f2c4d28cc49f155c9ed69d6002206a32c4b668050f81b789b49fe5c29164872f9f1db63d7ba8604a6296f183a18a",
-            "signSignature": "3045022100dae0598ff7dcab0184d36e3d8313da17401893b2b6b476276412f2682e66c34402205df085dae213c561e5db293cd5bc8930f6343783a99ce48c349e92abfd2e2fa1",
-            "vendorField": ":bongocrazy"
-            "confirmations": 347019,
+            "typeGroup": 1,
+            "amount": "29",
+            "fee": "10000000",
+            "sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "senderPublicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+            "recipient": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "signature": "304402202be9f7aaa32ff7455c864d2ac1a86e6051977487b02a501b334e06adc311dff1022002b31ea09f8bdbb64def24b9cd3fbe8948be76ad99657b33e05d21e570cd97a7",
+            "vendorField": "Java ? ? ? ?",
+            "confirmations": 82383,
             "timestamp": {
-                "epoch": 51704908,
-                "unix": 1541806108,
-                "human": "2018-11-09T23:28:28.000Z"
-            }
-        }
+                "epoch": 90127344,
+                "unix": 1580228544,
+                "human": "2020-01-28T16:22:24.000Z"
+            },
+            "nonce": "201"
+        },
+        {
+            "id": "531a5321b6d3589a11e83088a09c0d263400f1f9b70151583c7b8129f6f8af4c",
+            "blockId": "3b2980271dc59bde0dd229fd3cb96d29dcc37dcf19fb2932613c7640ef6d171e",
+            "version": 2,
+            "type": 0,
+            "typeGroup": 1,
+            "amount": "28",
+            "fee": "10000000",
+            "sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "senderPublicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+            "recipient": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "signature": "3045022100aa79b61de7cc6d5b1ca800161f1d750121a2b84aa3a9c2dd9104d7d07d3d41ec02202a0c40333782d10f18dda8c1a7f3022b54de62e449976ffeca0e0e26635dd4ae",
+            "vendorField": "Java ? ? ? ?",
+            "confirmations": 82383,
+            "timestamp": {
+                "epoch": 90127344,
+                "unix": 1580228544,
+                "human": "2020-01-28T16:22:24.000Z"
+            },
+            "nonce": "200"
+        },
+        ...
     ]
 }
 ```
@@ -301,6 +396,12 @@ The inverse of `transactions/received`.
 GET /api/wallets/{id}/transactions/sent
 ```
 
+### Example
+
+```bash
+http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/sent
+```
+
 ### Path Parameters
 
 | Name | Type | Description | Required |
@@ -313,46 +414,76 @@ GET /api/wallets/{id}/transactions/sent
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders wallets. | No |
+| id | string | ... | No |
+| blockId | string | ... | No |
+| type | int | ... | No |
+| typeGroup | int | ... | No |
+| version | int | ... | No |
+| recipientId | string | ... | No |
+| timestamp | int | ... | No |
+| nonce | int | ... | No |
+| amount | int | ... | No |
+| fee |  |  |  |
 
 ### Response
 
 ```javascript
 {
-  "meta": {
-    "count": 2,
-    "pageCount": 2,
-    "totalCount": 4,
-    "next": "/v2/wallets/boldninja/transactions/sent?page=2",
-    "previous": null,
-    "self": "/v2/wallets/boldninja/transactions/sent?page=1",
-    "first": "/v2/wallets/boldninja/transactions/sent?page=1",
-    "last": "/v2/wallets/boldninja/transactions/sent?page=2"
-  },
-  "data": [
-    {
-      "id": "686b989f56ede8141289691d166b8158f0b2c3b272112fdf77198e394fa4b59a",
-      "blockId": "16409699706603010399",
-      "version": 1,
-      "type": 3,
-      "amount": 0,
-      "fee": 100000000,
-      "sender": "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
-      "recipient": "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
-      "signature": "304402202ad26e82b6b9c96babfb7fba4389d17e868cc802ada3a7d263848a8b7baa144402205e5571afdba7b1c0cad698620c5306e320f3dadcb9a82df6ebbd3af7df757904",
-      "signSignature": null,
-      "asset": {
-        "votes": [
-          "+0306950dae7158103814e3828b1ab97a87dbb3680db1b4c6998b8208865b2f9db7"
-        ]
-      },
-      "confirmations": 526006,
-      "timestamp": {
-        "epoch": 49663543,
-        "unix": 1539764743,
-        "human": "2018-10-17T08:25:43.000Z"
-      }
-    }
-  ]
+    "meta": {
+        "totalCountIsEstimate": false,
+        "count": 100,
+        "pageCount": 3,
+        "totalCount": 208,
+        "next": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/sent?transform=true&page=2&limit=100",
+        "previous": null,
+        "self": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/sent?transform=true&page=1&limit=100",
+        "first": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/sent?transform=true&page=1&limit=100",
+        "last": "/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/sent?transform=true&page=3&limit=100"
+    },
+    "data": [
+        {
+            "id": "f9cb2fb63f53ee947442de910c8f87cb96189899edc6de630b66cbf864fc6fc4",
+            "blockId": "8115a42a8f869af2592ccd2ed8a4d5bb5039c12ddc5af10e09b557719b95fe97",
+            "version": 2,
+            "type": 0,
+            "typeGroup": 1,
+            "amount": "100",
+            "fee": "10000000",
+            "sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "senderPublicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+            "recipient": "DBoKkzKAT6YdXhyv1mvcKEg97JxiRqMuK2",
+            "signature": "8246cca14ac3e4158db03c4f881294acc903d32ed11ee06cb29e00b4b9c687e323f4a4ee117a65d2b79d7f0e833f4e36a14fe9a968d48baa6bb301fb1f4eb8e1",
+            "confirmations": 271,
+            "timestamp": {
+                "epoch": 90793352,
+                "unix": 1580894552,
+                "human": "2020-02-05T09:22:32.000Z"
+            },
+            "nonce": "208"
+        },
+        {
+            "id": "9b4d9b4630c1bf763889d5b8457dc9c949ede2b2c746bba39d5183fd49199880",
+            "blockId": "0d2ac82ffdb189cdc61a1bb09ba040056dd31c92364016dc1d6aa13baf66b8bd",
+            "version": 2,
+            "type": 0,
+            "typeGroup": 1,
+            "amount": "100",
+            "fee": "10000000",
+            "sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "senderPublicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+            "recipient": "DBoKkzKAT6YdXhyv1mvcKEg97JxiRqMuK2",
+            "signature": "1681979fb7c365655b6c14ad03a26f1968e3f588870d7b3f4acd33958c488620e2832f2f8c0d89652a2baff233cb7c8187243e44fa1125e91f23969e24f71bef",
+            "confirmations": 438,
+            "timestamp": {
+                "epoch": 90792008,
+                "unix": 1580893208,
+                "human": "2020-02-05T09:00:08.000Z"
+            },
+            "nonce": "207"
+        },
+        ...
+    ]
 }
 ```
 
