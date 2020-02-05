@@ -1,3 +1,7 @@
+---
+description: This endpoints are currently only available on devnet.
+---
+
 # Locks
 
 ## List all locks
