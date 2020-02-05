@@ -424,7 +424,8 @@ http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transacti
 | timestamp | int | ... | No |
 | nonce | int | ... | No |
 | amount | int | ... | No |
-| fee |  |  |  |
+| fee | int | ... | No |
+| vendorField | string | ... | No |
 
 ### Response
 
@@ -497,6 +498,12 @@ Returns all votes made by the wallet. Often users create a new wallet instead of
 GET /api/wallets/{id}/votes
 ```
 
+### Example
+
+```bash
+curl http://dexplorer.ark.io/api/wallets/DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t/votes
+```
+
 ### Path Parameters
 
 | Name | Type | Description | Required |
@@ -514,40 +521,70 @@ GET /api/wallets/{id}/votes
 
 ```javascript
 {
-  "meta": {
-    "count": 2,
-    "pageCount": 2,
-    "totalCount": 3,
-    "next": "/v2/wallets/boldninja/votes?page=2",
-    "previous": null,
-    "self": "/v2/wallets/boldninja/votes?page=1",
-    "first": "/v2/wallets/boldninja/votes?page=1",
-    "last": "/v2/wallets/boldninja/votes?page=2"
-  },
-  "data": [
-    {
-      "id": "08c6b23f9edd97b613f17153fb97a316a4fb83136e9842655dafc8262f363e0e",
-      "blockId": "14847399772737279404",
-      "version": 1,
-      "type": 3,
-      "amount": 0,
-      "fee": 100000000,
-      "sender": "DARiJqhogp2Lu6bxufUFQQMuMyZbxjCydN",
-      "recipient": "DARiJqhogp2Lu6bxufUFQQMuMyZbxjCydN",
-      "signature": "304402207ba0e8aaee93695360081b7ce713f13d62b544038ac440bd46357398af86cae6022059ac74586738be1ef622e0baba992d0e417d9aed7ab980f374eb0c9d53e25f8e",
-      "asset": {
-        "votes": [
-          "+0257b7724e97cd832e0c28533a86da5220656f9b5122141daab20e8526decce01f"
-        ]
-      },
-      "confirmations": 1636029,
-      "timestamp": {
-        "epoch": 17094358,
-        "unix": 1507195558,
-        "human": "2017-10-05T09:25:58Z"
-      }
-    }
-  ]
+    "meta": {
+        "totalCountIsEstimate": false,
+        "count": 17,
+        "pageCount": 1,
+        "totalCount": 17,
+        "next": null,
+        "previous": null,
+        "self": "/wallets/DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t/votes?transform=true&page=1&limit=100",
+        "first": "/wallets/DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t/votes?transform=true&page=1&limit=100",
+        "last": "/wallets/DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t/votes?transform=true&page=1&limit=100"
+    },
+    "data": [
+        {
+            "id": "16da3b02677ee548445553425ba7d8cf75eb67c6562e2af911ac7300dc074300",
+            "blockId": "af33851b0156007e98bc78d8996c02cad0f6c9ed7790071bc70b3abb0f164b38",
+            "version": 1,
+            "type": 3,
+            "typeGroup": 1,
+            "amount": "0",
+            "fee": "1000000",
+            "sender": "DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t",
+            "senderPublicKey": "0215789ac26155b7a338708f595b97c453e08918d0630c896cbd31d83fe2ad1c33",
+            "recipient": "DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t",
+            "signature": "304402203da2bc42ea8c972c4fa589f82db93e3d17a50db671aca4a87ffbb3440be3519102207933d77c933ef5c912149cb7d126072cc8013151409bed24d544dfbd899f191a",
+            "asset": {
+                "votes": [
+                    "+036b029d87e525e3396acabbb07bd2e8b86704d0c3681e0b4af0e119cbaa1b03c4"
+                ]
+            },
+            "confirmations": 380330,
+            "timestamp": {
+                "epoch": 79583635,
+                "unix": 1569684835,
+                "human": "2019-09-28T15:33:55.000Z"
+            },
+            "nonce": "20"
+        },
+        {
+            "id": "d0b6b08574132741fd804be6b7ecb42a34ab378ec857899171008b12c3792515",
+            "blockId": "77113f9b20ffb346b4fd150941f4a3c64f00f9b61fd79854fa50e96774121045",
+            "version": 1,
+            "type": 3,
+            "typeGroup": 1,
+            "amount": "0",
+            "fee": "1000000",
+            "sender": "DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t",
+            "senderPublicKey": "0215789ac26155b7a338708f595b97c453e08918d0630c896cbd31d83fe2ad1c33",
+            "recipient": "DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t",
+            "signature": "3045022100dd93ed94c0ffa7352af7ad85a7703048ce2056cc1343203b3b49df008fde0af202201db09f96aed3cfc8c49b9ae96fdbde3661e58852761cf49f35f073996891f2da",
+            "asset": {
+                "votes": [
+                    "-03a24de6eb4ca777bc0d6183fdf2aab2f1cc6c2a7736466314f670fe33c8f8b397"
+                ]
+            },
+            "confirmations": 380334,
+            "timestamp": {
+                "epoch": 79583603,
+                "unix": 1569684803,
+                "human": "2019-09-28T15:33:23.000Z"
+            },
+            "nonce": "19"
+        },
+        ...
+    ]
 }
 ```
 
@@ -572,33 +609,56 @@ GET /api/wallets/top
 
 ```javascript
 {
-  "meta": {
-    "count": 100,
-    "pageCount": 1859,
-    "totalCount": 185829,
-    "next": "/api/v2/wallets/top?page=2&limit=100",
-    "previous": null,
-    "self": "/api/v2/wallets/top?page=1&limit=100",
-    "first": "/api/v2/wallets/top?page=1&limit=100",
-    "last": "/api/v2/wallets/top?page=1859&limit=100"
-  },
-  "data": [
-    {
-      "address": "DGihocTkwDygiFvmg6aG8jThYTic47GzU9",
-      "publicKey": "024c8247388a02ecd1de2a3e3fd5b7c61ecc2797fa3776599d558333ef1802d231",
-      "username": null,
-      "secondPublicKey": null,
-      "balance": 11499593462120632,
-      "isDelegate": false
+    "meta": {
+        "count": 100,
+        "pageCount": 1968,
+        "totalCount": 196789,
+        "next": "/wallets/top?page=2&limit=100",
+        "previous": null,
+        "self": "/wallets/top?page=1&limit=100",
+        "first": "/wallets/top?page=1&limit=100",
+        "last": "/wallets/top?page=1968&limit=100"
     },
-    {
-      "address": "DRac35wghMcmUSe5jDMLBDLWkVVjyKZFxK",
-      "publicKey": "0374e9a97611540a9ce4812b0980e62d3c5141ea964c2cab051f14a78284570dcd",
-      "username": null,
-      "secondPublicKey": null,
-      "balance": 554107676293547,
-      "isDelegate": false
-    }
+    "data": [
+        {
+            "address": "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+            "publicKey": "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff",
+            "nonce": "249",
+            "balance": "8792440174231098",
+            "attributes": {
+                "delegate": {
+                    "lastBlock": {
+                        "id": "13114381566690093367",
+                        "height": 1,
+                        "timestamp": 0,
+                        "generatorPublicKey": "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff"
+                    }
+                }
+            },
+            "isDelegate": false,
+            "isResigned": false
+        },
+        {
+            "address": "DEyaFhDuaoQyKbFH4gJtYZvKkB6umyrEUj",
+            "publicKey": "033c59dcdc36944cc28f68c1e4b47ac370fe326e53f9adf5f07764d3e8b74b1838",
+            "nonce": "2111",
+            "balance": "2000044819999638",
+            "attributes": {
+                "secondPublicKey": "03820f214bd49a09c636fa366b4b3c1a0dbd2953d14aac7e68a596e0636e662dfb",
+                "delegate": {
+                    "username": "whalessio",
+                    "voteBalance": "0",
+                    "forgedFees": "0",
+                    "forgedRewards": "0",
+                    "producedBlocks": 0,
+                    "rank": 291
+                },
+                "vote": "033a5474f68f92f254691e93c06a2f22efaf7d66b543a53efcece021819653a200"
+            },
+            "isDelegate": true,
+            "isResigned": false,
+            "vote": "033a5474f68f92f254691e93c06a2f22efaf7d66b543a53efcece021819653a200"
+        },
     //... 98 more wallets
   ]
 }
