@@ -16,37 +16,123 @@ A paginated API is provided to obtain all wallets, including empty ones.
 GET /api/wallets
 ```
 
+### Example
+
+```bash
+curl http://dexplorer.ark.io/api/wallets
+```
+
 ### Query Parameters
 
 | Name | Type | Description | Required |
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders wallets. | No |
+| address | string | ... | No |
+| publicKey | string | ... | No |
+| senderPublicKey | string | ... | No |
+| vote | string | ... | No |
+| username | string | ... | No |
+| balance | int | ... | No |
+| voteBalance | int | ... | No |
+| producedBlocks | int | ... | No |
 
 ### Response
 
 ```javascript
 {
-  "meta": {
-    "count": 2,
-    "pageCount": 421,
-    "totalCount": 841,
-    "next": "/v2/wallets?page=2",
-    "previous": null,
-    "self": "/v2/wallets?page=1",
-    "first": "/v2/wallets?page=1",
-    "last": "/v2/wallets?page=421"
-  },
-  "data": [
-    {
-      "address": "D59NTfV92ca9QevUydvMiFMFdubbCaAVCV",
-      "publicKey": "037d035f08b3bad0d5bb605232c7aa41555693c480044dbeb797270a44c339da5a",
-      "username": null,
-      "secondPublicKey": null,
-      "balance": 1023145260990,
-      "isDelegate": false
-    }
-  ]
+    "meta": {
+        "count": 100,
+        "pageCount": 1968,
+        "totalCount": 196789,
+        "next": "/wallets?page=2&limit=100",
+        "previous": null,
+        "self": "/wallets?page=1&limit=100",
+        "first": "/wallets?page=1&limit=100",
+        "last": "/wallets?page=1968&limit=100"
+    },
+    "data": [
+        {
+            "address": "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+            "publicKey": "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff",
+            "nonce": "249",
+            "balance": "8792440174231098",
+            "attributes": {
+                "delegate": {
+                    "lastBlock": {
+                        "id": "13114381566690093367",
+                        "height": 1,
+                        "timestamp": 0,
+                        "generatorPublicKey": "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff"
+                    }
+                }
+            },
+            "isDelegate": false,
+            "isResigned": false
+        },
+        {
+            "address": "DEyaFhDuaoQyKbFH4gJtYZvKkB6umyrEUj",
+            "publicKey": "033c59dcdc36944cc28f68c1e4b47ac370fe326e53f9adf5f07764d3e8b74b1838",
+            "nonce": "2111",
+            "balance": "2000044819999638",
+            "attributes": {
+                "secondPublicKey": "03820f214bd49a09c636fa366b4b3c1a0dbd2953d14aac7e68a596e0636e662dfb",
+                "delegate": {
+                    "username": "whalessio",
+                    "voteBalance": "0",
+                    "forgedFees": "0",
+                    "forgedRewards": "0",
+                    "producedBlocks": 0,
+                    "rank": 291
+                },
+                "vote": "033a5474f68f92f254691e93c06a2f22efaf7d66b543a53efcece021819653a200"
+            },
+            "isDelegate": true,
+            "isResigned": false,
+            "vote": "033a5474f68f92f254691e93c06a2f22efaf7d66b543a53efcece021819653a200"
+        },
+        {
+            "address": "DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve",
+            "publicKey": "033a5474f68f92f254691e93c06a2f22efaf7d66b543a53efcece021819653a200",
+            "nonce": "21578",
+            "balance": "150272074652148",
+            "attributes": {
+                "secondPublicKey": "026de1cd4321a7e78a7b4d8453d1b1ca210eaf991022c55a99e9b0b9ebddbbd502",
+                "delegate": {
+                    "username": "alessio",
+                    "voteBalance": "2001209586209110",
+                    "forgedFees": "468407250508",
+                    "forgedRewards": "14120600000000",
+                    "producedBlocks": 70801,
+                    "rank": 1,
+                    "lastBlock": {
+                        "version": 0,
+                        "timestamp": 90793640,
+                        "height": 4138753,
+                        "previousBlockHex": "274270f5d0e140f8b1c382c6b74afa4aa87256ecfc2cf26b5a597124b3e22b60",
+                        "previousBlock": "274270f5d0e140f8b1c382c6b74afa4aa87256ecfc2cf26b5a597124b3e22b60",
+                        "numberOfTransactions": 0,
+                        "totalAmount": "0",
+                        "totalFee": "0",
+                        "reward": "200000000",
+                        "payloadLength": 0,
+                        "payloadHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "generatorPublicKey": "033a5474f68f92f254691e93c06a2f22efaf7d66b543a53efcece021819653a200",
+                        "blockSignature": "3044022019b157d3bce0c8b7bcad4b3fb427af49e92a48e902172d0c17213ba0a6388db1022029bd561d91a36a835b0e6fc3e98a4b2050f5a42fae05c70e0076616fa2b5553e",
+                        "idHex": "f1c2b78bcd7904dbfb6a240e3feaacf678e1de64c95fbdd0f6252268538e6f4d",
+                        "id": "f1c2b78bcd7904dbfb6a240e3feaacf678e1de64c95fbdd0f6252268538e6f4d"
+                    },
+                    "round": 81153
+                },
+                "vote": "0215789ac26155b7a338708f595b97c453e08918d0630c896cbd31d83fe2ad1c33"
+            },
+            "isDelegate": true,
+            "isResigned": false,
+            "vote": "0215789ac26155b7a338708f595b97c453e08918d0630c896cbd31d83fe2ad1c33"
+        },
+    ...
+    ]
 }
 ```
 
