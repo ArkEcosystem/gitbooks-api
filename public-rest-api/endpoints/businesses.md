@@ -18,7 +18,7 @@ curl http://dexplorer.ark.io/api/businesses
 | :--- | :--- | :--- | :--- |
 | page | int | The number of the page that will be returned. | false |
 | limit | int | The number of resources per page. | false |
-| orderBy | string | Type by which it orders bridgechains. | false |
+| orderBy | string | Type by which it orders businesses. | false |
 | publicKey | string | The publicKey of a transaction which submitted the business. | false |
 | isResigned | boolean | If business is resigned or not. | false |
 
@@ -77,6 +77,12 @@ GET /api/business/{walletAddress}
 curl http://dexplorer.ark.io/api/businesses/D991ZqskaGWMDu9kpfpJr5LRssV7ek981k
 ```
 
+### Path parameters
+
+| Name  | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| walletAddress | string | The identifier of the wallet to be retrieved. | true |
+
 ### Response
 
 ```javascript
@@ -104,6 +110,12 @@ GET /businesses/{walletAddress}/bridgechains
 ```bash
 curl http://dexplorer.ark.io/api/businesses/DEHyKHdtzHqTghfpwaBcvTzLpgPP5AAUgE/bridgechains
 ```
+
+### Path parameters
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| walletAddress | string | The identifier of the wallet to be retrieved. | true |
 
 ### Query Parameters <a id="query-parameters"></a>
 
@@ -177,7 +189,18 @@ POST /api/businesses/search
 | page | int | The number of the page that will be returned. | false |
 | limit | int | The number of resources per page. | false |
 | orderBy | string | Type by which it orders business. | false |
-| isResigned | boolean | If business is resigned or not. | false |
+
+### Body parameters
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| address | string | ... | false |
+| publicKey | string | ... | false |
+| name | string | ... | false |
+| website | string | ... | false |
+| vat | string | ... | false |
+| repository | string | ... | false |
+| isResigned | boolean | ... | false |
 
 ### Response
 

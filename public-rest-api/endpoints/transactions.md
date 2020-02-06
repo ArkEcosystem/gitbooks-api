@@ -64,22 +64,27 @@ GET /api/transactions/{id}
 
 ```javascript
 {
-  "data": {
-    "id": "5c6ce775447a5acd22050d72e2615392494953bb1fb6287e9ffb3c33eaeb79aa",
-    "blockId": "4271682877946294396",
-    "type": 0,
-    "amount": 32106400000,
-    "fee": 10000000,
-    "sender": "DDiTHZ4RETZhGxcyAi1VruCXZKxBFqXMeh",
-    "recipient": "DQnQNoJuNCvpjYhxL7fsnGepHBqrumgsyP",
-    "signature": "3044022047c39f6f45a46a87f91ca867f9551dbebf0035adcfcbdc1370222c7a1517fc0002206fb5ecc10460e0352a8b626a508e2fcc76e39e490b0a2581dd772ebc8079696e",
-    "confirmations": 1928,
-    "timestamp": {
-      "epoch": 32794053,
-      "unix": 1522895253,
-      "human": "2018-04-05T02:27:33Z"
+    "data": {
+        "id": "f31b0c1f05798ccd78c600b8d2c1d53ea79b5768aaa30e1f16fa78af4798e7d4",
+        "blockId": "96172a1dc70db3deba61c2619a1a6ca56e1e6a2358581436880ba94ca97c7d8e",
+        "version": 2,
+        "type": 0,
+        "typeGroup": 1,
+        "amount": "16000002",
+        "fee": "10000000",
+        "sender": "DRgh1n8oyGHDE6xXVq4yhh3sSajAr7uHJY",
+        "senderPublicKey": "03153c994e5306b2fbba9bb533f22871e12e4c1d1d3960d1eeef385ab143b258b4",
+        "recipient": "DQZvBNDDP6De4m419dJcnd9hXEuMUCK1eE",
+        "signature": "2f954291cca7e0b0055879a81f406e7fc1a4f80b7436ff27a8a8c9c100b99f85948dff0dd5eff0d591baac57439694a7830cf3a424ba7d671d350cbeb27742f5",
+        "vendorField": "deadlock - Cryptology TBW License Fee.",
+        "confirmations": 293,
+        "timestamp": {
+            "epoch": 90878408,
+            "unix": 1580979608,
+            "human": "2020-02-06T09:00:08.000Z"
+        },
+        "nonce": "9814"
     }
-  }
 }
 ```
 
@@ -107,36 +112,62 @@ GET /api/transactions
 
 ```javascript
 {
-  "meta": {
-    "count": 2,
-    "pageCount": 127430,
-    "totalCount": 254860,
-    "next": "/v2/transactions?page=2",
-    "previous": null,
-    "self": "/v2/transactions?page=1",
-    "first": "/v2/transactions?page=1",
-    "last": "/v2/transactions?page=127430"
-  },
-  "data": [
-    {
-      "id": "5c6ce775447a5acd22050d72e2615392494953bb1fb6287e9ffb3c33eaeb79aa",
-      "blockId": "4271682877946294396",
-      "version": 1,
-      "type": 0,
-      "amount": 32106400000,
-      "fee": 10000000,
-      "sender": "DDiTHZ4RETZhGxcyAi1VruCXZKxBFqXMeh",
-      "recipient": "DQnQNoJuNCvpjYhxL7fsnGepHBqrumgsyP",
-      "signature": "3044022047c39f6f45a46a87f91ca867f9551dbebf0035adcfcbdc1370222c7a1517fc0002206fb5ecc10460e0352a8b626a508e2fcc76e39e490b0a2581dd772ebc8079696e",
-      "asset": {},
-      "confirmations": 1924,
-      "timestamp": {
-        "epoch": 32794053,
-        "unix": 1522895253,
-        "human": "2018-04-05T02:27:33Z"
-      }
-    }
-  ]
+    "meta": {
+        "totalCountIsEstimate": false,
+        "count": 100,
+        "pageCount": 9871,
+        "totalCount": 987028,
+        "next": "/transactions?type=0&transform=true&page=2&limit=100",
+        "previous": null,
+        "self": "/transactions?type=0&transform=true&page=1&limit=100",
+        "first": "/transactions?type=0&transform=true&page=1&limit=100",
+        "last": "/transactions?type=0&transform=true&page=9871&limit=100"
+    },
+    "data": [
+        {
+            "id": "f31b0c1f05798ccd78c600b8d2c1d53ea79b5768aaa30e1f16fa78af4798e7d4",
+            "blockId": "96172a1dc70db3deba61c2619a1a6ca56e1e6a2358581436880ba94ca97c7d8e",
+            "version": 2,
+            "type": 0,
+            "typeGroup": 1,
+            "amount": "16000002",
+            "fee": "10000000",
+            "sender": "DRgh1n8oyGHDE6xXVq4yhh3sSajAr7uHJY",
+            "senderPublicKey": "03153c994e5306b2fbba9bb533f22871e12e4c1d1d3960d1eeef385ab143b258b4",
+            "recipient": "DQZvBNDDP6De4m419dJcnd9hXEuMUCK1eE",
+            "signature": "2f954291cca7e0b0055879a81f406e7fc1a4f80b7436ff27a8a8c9c100b99f85948dff0dd5eff0d591baac57439694a7830cf3a424ba7d671d350cbeb27742f5",
+            "vendorField": "deadlock - Cryptology TBW License Fee.",
+            "confirmations": 183,
+            "timestamp": {
+                "epoch": 90878408,
+                "unix": 1580979608,
+                "human": "2020-02-06T09:00:08.000Z"
+            },
+            "nonce": "9814"
+        },
+        {
+            "id": "e05a744006b0bd3b076e49607e17b47e4903617ff4a5885233e7e2a18efc9bc3",
+            "blockId": "96172a1dc70db3deba61c2619a1a6ca56e1e6a2358581436880ba94ca97c7d8e",
+            "version": 2,
+            "type": 0,
+            "typeGroup": 1,
+            "amount": "383999994",
+            "fee": "10000000",
+            "sender": "DRgh1n8oyGHDE6xXVq4yhh3sSajAr7uHJY",
+            "senderPublicKey": "03153c994e5306b2fbba9bb533f22871e12e4c1d1d3960d1eeef385ab143b258b4",
+            "recipient": "DEQ7hCkvDrx6xxsr2NGKFQ1NoMispqqzDf",
+            "signature": "ef7c29904715e7504a119f698911f4f347279a2131f5734ed01cdbc0a0d24876365b42a0f6264af52c987b543d7c51aee5327af8c522a03a7dff25cd7614fc97",
+            "vendorField": "deadlock - ",
+            "confirmations": 183,
+            "timestamp": {
+                "epoch": 90878408,
+                "unix": 1580979608,
+                "human": "2020-02-06T09:00:08.000Z"
+            },
+            "nonce": "9813"
+        },
+        ...
+    ]
 }
 ```
 
@@ -147,7 +178,7 @@ Unconfirmed transactions have not been incorporated in the blockchain, but resid
 ### Endpoint
 
 ```text
-GET /api/transactions/unconfirmed/
+GET /api/transactions/unconfirmed
 ```
 
 ### Query Parameters
@@ -161,103 +192,32 @@ GET /api/transactions/unconfirmed/
 
 ```javascript
 {
-  "meta": {
-    "count": 5,
-    "pageCount": 8,
-    "totalCount": 40,
-    "next": "/api/v2/transactions/unconfirmed?limit=5&page=2",
-    "previous": null,
-    "self": "/api/v2/transactions/unconfirmed?limit=5&page=1",
-    "first": "/api/v2/transactions/unconfirmed?limit=5&page=1",
-    "last": "/api/v2/transactions/unconfirmed?limit=5&page=8"
-  },
-  "data": [
-    {
-      "id": "c94504293d23e3be535a049fdfacba95147f2a87a4ef6682c56801da96befce0",
-      "version": 1,
-      "type": 0,
-      "amount": 70866123,
-      "fee": 344000,
-      "sender": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-      "recipient": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-      "signature": "30450221008adeff8eb2a780168704d9e210368d81edff79b81aa7b995e43486f3b1e0096502205caef345584319a6294b1f5283c0d17b478b8a9bcdc10570e5a58681b0eae332",
-      "vendorField": "Yooooooloooooo",
-      "confirmations": 0,
-      "timestamp": {
-        "epoch": 56388424,
-        "unix": 1546489624,
-        "human": "2019-01-03T04:27:04.000Z"
-      }
+    "meta": {
+        "count": 1,
+        "pageCount": 1,
+        "totalCount": 1,
+        "next": null,
+        "previous": null,
+        "self": "/transactions/unconfirmed?transform=true&page=1&limit=100",
+        "first": "/transactions/unconfirmed?transform=true&page=1&limit=100",
+        "last": "/transactions/unconfirmed?transform=true&page=1&limit=100"
     },
-    {
-      "id": "db2e54211c352217eee0313a01f6258ac1634e201f04f89b0561d34f7d598066",
-      "version": 1,
-      "type": 0,
-      "amount": 17130719,
-      "fee": 344000,
-      "sender": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-      "recipient": "DKahhVFVJfqCcCmaQHuYzAVFKcWjBu5i6Z",
-      "signature": "30440220069f25d555157f3216b6725e1f66f37b126dcc039f2a4eb12fe74d9e93595d7b02202980215c9375d43f24ebd26a32d6db49f260ad55199c3a137b7dce61e324c970",
-      "vendorField": "Yooooooloooooo",
-      "confirmations": 0,
-      "timestamp": {
-        "epoch": 56388424,
-        "unix": 1546489624,
-        "human": "2019-01-03T04:27:04.000Z"
-      }
-    },
-    {
-      "id": "825ab53b50fa99d339486ab780c6a187c7f4fbccfa1098f38be7f57226b144bd",
-      "version": 1,
-      "type": 0,
-      "amount": 11266113,
-      "fee": 344000,
-      "sender": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-      "recipient": "DG92jj4vUW7SyxzM1VzkmQWMmgBGZVhrjb",
-      "signature": "3045022100918864cc6e5ae22010820f1d2a3d4677472d20d7a151597f3f6c705028f28dcf02203518b755fb860b40edfcde5107909d043e7a2cc38d66f5ca52710a0be7e6d710",
-      "vendorField": "Yooooooloooooo",
-      "confirmations": 0,
-      "timestamp": {
-        "epoch": 56388425,
-        "unix": 1546489625,
-        "human": "2019-01-03T04:27:05.000Z"
-      }
-    },
-    {
-      "id": "26146b25cde21ab72ecd49a0ac582372314625d854154cfd705dc841a4765ac8",
-      "version": 1,
-      "type": 0,
-      "amount": 737042,
-      "fee": 344000,
-      "sender": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-      "recipient": "DN8nGwcNbE3YcnZYFp8uvvc9z4WWDbytWK",
-      "signature": "3044022067abb680cd6699cf5dac9194c576949dce4b29fe3e4d108724829e8aa34d8a3c02205a3bb91bb46a0182c1dc393c05538e0b673702c75ff39ad0acbf6b879082d911",
-      "vendorField": "Yooooooloooooo",
-      "confirmations": 0,
-      "timestamp": {
-        "epoch": 56388425,
-        "unix": 1546489625,
-        "human": "2019-01-03T04:27:05.000Z"
-      }
-    },
-    {
-      "id": "7f54d415750361b3f15bdd4c85d73cbc6ea43efbee6e7725048c223cadd9a4b2",
-      "version": 1,
-      "type": 0,
-      "amount": 70866123,
-      "fee": 344000,
-      "sender": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-      "recipient": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-      "signature": "304402207a2f0ce904148dfa1aa0ffc685bdf0614b2e98de98f32b108dd205174d6b767102201566d703296801057e8f94c396fc5be208e6bddde20f5d70be3f46fbcf640bbd",
-      "vendorField": "Yooooooloooooo",
-      "confirmations": 0,
-      "timestamp": {
-        "epoch": 56388425,
-        "unix": 1546489625,
-        "human": "2019-01-03T04:27:05.000Z"
-      }
-    }
-  ]
+    "data": [
+        {
+            "id": "2f43b1487dc97a9cd61adce53a2cb8bbf6873aea5fd5f7cbe06f2a1e60c66e39",
+            "version": 2,
+            "type": 0,
+            "typeGroup": 1,
+            "amount": "100",
+            "fee": "10000000",
+            "sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "senderPublicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+            "recipient": "DBoKkzKAT6YdXhyv1mvcKEg97JxiRqMuK2",
+            "signature": "bafbfcb6eb792512be2261b18574afbcfc26ab604f2b9a96199b55d70aab7deb9ab66eaf03508ed6127b6a64b5c7e433de26d108846be1f1be57d779b3d3d73c",
+            "confirmations": 0,
+            "nonce": "218"
+        }
+    ]
 }
 ```
 
@@ -281,23 +241,21 @@ GET /api/transactions/unconfirmed/{id}
 
 ```javascript
 {
-  "data": {
-    "id": "c94504293d23e3be535a049fdfacba95147f2a87a4ef6682c56801da96befce0",
-    "version": 1,
-    "type": 0,
-    "amount": 70866123,
-    "fee": 344000,
-    "sender": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-    "recipient": "DMzBk3g7ThVQPYmpYDTHBHiqYuTtZ9WdM3",
-    "signature": "30450221008adeff8eb2a780168704d9e210368d81edff79b81aa7b995e43486f3b1e0096502205caef345584319a6294b1f5283c0d17b478b8a9bcdc10570e5a58681b0eae332",
-    "vendorField": "Yooooooloooooo",
-    "confirmations": 0,
-    "timestamp": {
-      "epoch": 56388424,
-      "unix": 1546489624,
-      "human": "2019-01-03T04:27:04.000Z"
-    }
-  }
+    "data": 
+        {
+            "id": "2f43b1487dc97a9cd61adce53a2cb8bbf6873aea5fd5f7cbe06f2a1e60c66e39",
+            "version": 2,
+            "type": 0,
+            "typeGroup": 1,
+            "amount": "100",
+            "fee": "10000000",
+            "sender": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+            "senderPublicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+            "recipient": "DBoKkzKAT6YdXhyv1mvcKEg97JxiRqMuK2",
+            "signature": "bafbfcb6eb792512be2261b18574afbcfc26ab604f2b9a96199b55d70aab7deb9ab66eaf03508ed6127b6a64b5c7e433de26d108846be1f1be57d779b3d3d73c",
+            "confirmations": 0,
+            "nonce": "218"
+        }
 }
 ```
 
@@ -393,17 +351,29 @@ GET /api/transactions/types
 
 ```javascript
 {
-  "data": {
-    "Transfer": 0,
-    "SecondSignature": 1,
-    "DelegateRegistration": 2,
-    "Vote": 3,
-    "MultiSignature": 4,
-    "Ipfs": 5,
-    "TimelockTransfer": 6,
-    "MultiPayment": 7,
-    "DelegateResignation": 8
-  }
+    "data": {
+        "1": {
+            "Transfer": 0,
+            "SecondSignature": 1,
+            "DelegateRegistration": 2,
+            "Vote": 3,
+            "MultiSignature": 4,
+            "Ipfs": 5,
+            "MultiPayment": 6,
+            "DelegateResignation": 7,
+            "HtlcLock": 8,
+            "HtlcClaim": 9,
+            "HtlcRefund": 10
+        },
+        "2": {
+            "BusinessRegistration": 0,
+            "BusinessResignation": 1,
+            "BusinessUpdate": 2,
+            "BridgechainRegistration": 3,
+            "BridgechainResignation": 4,
+            "BridgechainUpdate": 5
+        }
+    }
 }
 ```
 
@@ -421,17 +391,143 @@ GET /api/transactions/fees
 
 ```javascript
 {
-  "data": {
-    "transfer": 10000000,
-    "secondSignature": 500000000,
-    "delegateRegistration": 2500000000,
-    "vote": 100000000,
-    "multiSignature": 500000000,
-    "ipfs": 0,
-    "timelockTransfer": 0,
-    "multiPayment": 0,
-    "delegateResignation": 0
-  }
+    "data": {
+        "1": {
+            "transfer": "10000000",
+            "secondSignature": "500000000",
+            "delegateRegistration": "2500000000",
+            "vote": "100000000",
+            "multiSignature": "500000000",
+            "ipfs": "500000000",
+            "multiPayment": "10000000",
+            "delegateResignation": "2500000000",
+            "htlcLock": "10000000",
+            "htlcClaim": "0",
+            "htlcRefund": "0"
+        },
+        "2": {
+            "businessRegistration": "5000000000",
+            "businessResignation": "5000000000",
+            "businessUpdate": "5000000000",
+            "bridgechainRegistration": "5000000000",
+            "bridgechainResignation": "5000000000",
+            "bridgechainUpdate": "5000000000"
+        }
+    }
 }
+```
+
+## Get transaction schemas
+
+### Endpoint
+
+```bash
+/api/transactions/schemas
+```
+
+### Response
+
+```bash
+{
+    "data": {
+        "1": {
+            "0": {
+                "id": {
+                    "anyOf": [
+                        {
+                            "$ref": "transactionId"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "version": {
+                    "enum": [
+                        1,
+                        2
+                    ]
+                },
+                "network": {
+                    "$ref": "networkByte"
+                },
+                "timestamp": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "nonce": {
+                    "bignumber": {
+                        "minimum": 0
+                    }
+                },
+                "typeGroup": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "amount": {
+                    "bignumber": {
+                        "minimum": 1,
+                        "bypassGenesis": true
+                    }
+                },
+                "fee": {
+                    "bignumber": {
+                        "minimum": 1,
+                        "bypassGenesis": true
+                    }
+                },
+                "senderPublicKey": {
+                    "$ref": "publicKey"
+                },
+                "signature": {
+                    "$ref": "alphanumeric"
+                },
+                "secondSignature": {
+                    "$ref": "alphanumeric"
+                },
+                "signSignature": {
+                    "$ref": "alphanumeric"
+                },
+                "signatures": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 16,
+                    "additionalItems": false,
+                    "uniqueItems": true,
+                    "items": {
+                        "allOf": [
+                            {
+                                "minLength": 130,
+                                "maxLength": 130
+                            },
+                            {
+                                "$ref": "alphanumeric"
+                            }
+                        ]
+                    }
+                },
+                "type": {
+                    "transactionType": 0
+                },
+                "vendorField": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "format": "vendorField"
+                        }
+                    ]
+                },
+                "recipientId": {
+                    "$ref": "address"
+                },
+                "expiration": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+        ...
 ```
 

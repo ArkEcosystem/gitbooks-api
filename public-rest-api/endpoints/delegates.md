@@ -26,6 +26,16 @@ GET /api/delegates
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders delegates. | No |
+| type | resigned \| never-forged | ... | No |
+| address | string | ... | No |
+| publicKey | string | ... | No |
+| secondPublicKey | string | ... | No |
+| vote | string | ... | No |
+| username | string | ... | No |
+| balance | int | ... | No |
+| voteBalance | int | ... | No |
+| producedBlocks | int | ... | No |
 
 ### Examples
 
@@ -245,6 +255,20 @@ GET /api/delegates/{username|address|publicKey}/blocks
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orderers blocks. | No |
+| id | string | ... | No |
+| version | int | ... | No |
+| timestamp | int | ... | No |
+| previousBlock | string | ... | No |
+| height | int | ... | No |
+| numberOfTransactions | int | ... | No |
+| totalAmount | int | ... | No |
+| totalFee | int | ... | No |
+| reward | int | ... | No |
+| payloadLength | int | ... | No |
+| payloadHash | string | ... | No |
+| generatorPublicKey | string | ... | No |
+| blockSignature | string | ... | No |
 
 ### Examples
 
@@ -347,6 +371,15 @@ GET /api/delegates/{username|address|publicKey}/voters
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it order voters. | No |
+| address | string | ... | No |
+| publicKey | string | ... | No |
+| secondPublicKey | string | ... | No |
+| vote | string | ... | No |
+| username | string | ... | No |
+| balance | int | ... | No |
+| voteBalance | int | ... | No |
+| producedBlocks | int | ... | No |
 
 ### Examples
 

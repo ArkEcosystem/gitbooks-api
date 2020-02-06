@@ -24,8 +24,20 @@ GET /api/blocks
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders blocks. | No |
 | id | string | The identifier of the block to be retrieved. | No |
+| version | int | ... | No |
+| timestamp | int | ... | No |
+| previousBlock | string | ... | No |
 | height | int | The height of the block to be retrieved. | No |
+| numberOfTransactions | int | ... | No |
+| totalAmount | int | ... | No |
+| totalFee | int | ... | No |
+| reward | int | ... | No |
+| payloadLength | int | ... | No |
+| payloadHash | int | ... | No |
+| generatorPublicKey | string | ... | No |
+| blockSignature | string | ... | No |
 
 ### Examples
 
@@ -155,6 +167,104 @@ curl https://api.ark.io/api/blocks?height=7000042
 }
 ```
 
+## Retrieve first Block
+
+### Endpoint
+
+```bash
+/api/blocks/first
+```
+
+### Example
+
+```bash
+curl http://dexplorer.ark.io/api/blocks/first
+```
+
+### Response
+
+```javascript
+{
+    "data": {
+        "id": "13114381566690093367",
+        "version": 0,
+        "height": 1,
+        "previous": "0",
+        "forged": {
+            "reward": "0",
+            "fee": "0",
+            "total": "0",
+            "amount": "12500000000000000"
+        },
+        "payload": {
+            "hash": "2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867",
+            "length": 11395
+        },
+        "generator": {
+            "address": "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+            "publicKey": "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff"
+        },
+        "signature": "3044022035694a9b99a9236655c658eb07fc3b02ce5edcc24b76424a7287c54ed3822b0602203621e92defb360490610f763d85e94c2db2807a4bd7756cc8a6a585463ef7bae",
+        "confirmations": 4149041,
+        "transactions": 52,
+        "timestamp": {
+            "epoch": 0,
+            "unix": 1490101200,
+            "human": "2017-03-21T13:00:00.000Z"
+        }
+    }
+}
+```
+
+## Retrieve last block
+
+### Endpoint
+
+```bash
+/api/blocks/last
+```
+
+### Example
+
+```bash
+curl http://dexplorer.ark.io/api/blocks/last
+```
+
+### Response
+
+```javascript
+{
+    "data": {
+        "id": "052c3497ec8341c489d492b3bb22920c45ec7421ff7c8a213534c061bbf45c0c",
+        "version": 0,
+        "height": 4149047,
+        "previous": "9930ce34009b1808796f7686a70b08a6b02b511677f9d8c0670dff0a6ab0a816",
+        "forged": {
+            "reward": "200000000",
+            "fee": "0",
+            "total": "200000000",
+            "amount": "0"
+        },
+        "payload": {
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "length": 0
+        },
+        "generator": {
+            "username": "shamrock",
+            "address": "DFDwyNtm1zU9xpqbSykaipUzQKLJkEHmAX",
+            "publicKey": "03d712d913bd398f13e85b4b13d4873902e0a9caf479b7a1702dd304b5c6f1ead0"
+        },
+        "signature": "30440220553633a3c8249ae76fb8565b657aee493625c8c395ea17b8e4219868a028a8b3022054e5fc5a214053f3ace0172c41f7e106c28907a2e227907c6be88e6d7acd26a6",
+        "confirmations": 0,
+        "transactions": 0,
+        "timestamp": {
+            "epoch": 90876368,
+            "unix": 1580977568,
+            "human": "2020-02-06T08:26:08.000Z"
+        }
+    }
+```
+
 ## Retrieve a Block
 
 Blocks may be retrieved by ID or by height. The height is an incremental integer.
@@ -238,6 +348,18 @@ GET /api/blocks/{id|height}/transactions
 | :--- | :---: | :--- | :---: |
 | page | int | The number of the page that will be returned. | No |
 | limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders transactions of a block. | No |
+| id | string | ... | No |
+| blockId | string | ... | No |
+| type | int | ... | No |
+| version | int | ... | No |
+| senderPublicKey | string | ... | No |
+| senderId | string | ... | No |
+| recipientId | string | ... | No |
+| timestamp | int | ... | No |
+| amount | int | ... | No |
+| fee | int | ... | No |
+| vendorField | string | ... | No |
 
 ### Examples
 
