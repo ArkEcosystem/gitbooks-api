@@ -1,5 +1,9 @@
 # Locks
 
+{% hint style="danger" %}
+**This endpoints return HTLC Locks. HTLC Locks are not operational on Mainnet.**
+{% endhint %}
+
 ## List all locks
 
 ```text
