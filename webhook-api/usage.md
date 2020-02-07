@@ -61,87 +61,12 @@ server.post("/blocks", jsonParser, (req, res) => {
 });
 ```
 
-```go
-package main
-
-import (
-    "fmt"
-    "log"
-    "net/http"
-)
-
-const (
-    webhookToken = "fe944e318edb02b979d6bf0c87978b640c8e74e1cbfe36404386d33a5bbd8b66"
-    verification = "0c8e74e1cbfe36404386d33a5bbd8b66"
-)
-
-func validateOrigin(next http.Handler) http.Handler {
-    return func(w http.ResponseWriter, r *http.Request) {
-        if r.Header.Get("authorization") + verification != webhookToken {
-            w.WriteHeader(http.StatusUnauthorized)
-            w.Write([]byte("Unauthorized!"))
-            return
-        }
-        return next(w, r)
-    }
-}
-
-func handler(w http.ResponseWriter, r *http.Request) {
-    decoder := json.NewDecoder(r.Body)
-
-    var resp Response // some defined DTO
-    err := decoder.Decode(&resp)
-    if err != nil {
-        handle(w, err)
-    }
-
-    // do something with the received block/transaction/wallet
-
-}
-
-func main() {
-    http.HandleFunc("/blocks", validateOrigin(handler))
-    log.Fatal(http.ListenAndServe(":8080", nil))
-}
-```
-
-```python
-from flask import Flask, request
-from werkzeug.exceptions import Unauthorized
-from functools import wraps
-
-app = Flask(__name__)
-
-verification = "0c8e74e1cbfe36404386d33a5bbd8b66"
-token = "fe944e318edb02b979d6bf0c87978b640c8e74e1cbfe36404386d33a5bbd8b66"
-
-# This Should Be Middleware if This App Is Dedicated to Webhooks
-def token_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if request.headers.get("authorization") + verification != token:
-            raise Unauthorized("Unauthorized!")
-        return f(*args, **kwargs)
-    return decorated_function
-
-@app.route("/blocks")
-@token_required
-def handle_block():
-    block = request.get_json()
-    # do something with the block
-
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
-```
-
 Let's break down the steps we took here:
 
 * Grab the `Authorization` header.
 * Create the full token based on the `Authorization` header and `Verification` string.
 * Deny access if the `full token` does not equal the `webhook token`.
 * Log and process the request body if the `full token` is valid.
-
-## Closing
 
 Now you should know enough on how to secure and handle incoming webhooks. Head over to the [API docs](https://github.com/ArkEcosystem/gitbooks-api/tree/9815499ca52e615b8de858160da915cd960e6ea3/api/webhooks/README.md) for webhooks to get started.
 
