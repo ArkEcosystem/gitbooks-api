@@ -9,7 +9,7 @@ GET api/businesses
 ### Example
 
 ```text
-curl http://dexplorer.ark.io/api/businesses
+curl https://api.ark.io/api/businesses
 ```
 
 ### Query Parameters
@@ -74,7 +74,7 @@ GET /api/business/{walletAddress}
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/businesses/D991ZqskaGWMDu9kpfpJr5LRssV7ek981k
+curl https://api.ark.io/api/businesses/D991ZqskaGWMDu9kpfpJr5LRssV7ek981k
 ```
 
 ### Path parameters
@@ -108,7 +108,7 @@ GET /businesses/{walletAddress}/bridgechains
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/businesses/DEHyKHdtzHqTghfpwaBcvTzLpgPP5AAUgE/bridgechains
+curl https://api.ark.io/api/businesses/DEHyKHdtzHqTghfpwaBcvTzLpgPP5AAUgE/bridgechains
 ```
 
 ### Path parameters

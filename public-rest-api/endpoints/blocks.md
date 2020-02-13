@@ -178,7 +178,7 @@ curl https://api.ark.io/api/blocks?height=7000042
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/blocks/first
+curl https://api.ark.io/api/blocks/first
 ```
 
 ### Response
@@ -227,7 +227,7 @@ curl http://dexplorer.ark.io/api/blocks/first
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/blocks/last
+curl https://api.ark.io/api/blocks/last
 ```
 
 ### Response

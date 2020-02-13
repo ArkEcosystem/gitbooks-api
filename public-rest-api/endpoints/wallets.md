@@ -19,7 +19,7 @@ GET /api/wallets
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/wallets
+curl https://api.ark.io/api/wallets
 ```
 
 ### Query Parameters
@@ -149,7 +149,7 @@ GET /api/wallets/{id}
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+curl https://api.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
 ```
 
 ### Path Parameters
@@ -193,7 +193,7 @@ GET /api/wallets/{id}/transactions
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions
+curl https://api.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions
 ```
 
 ### Path Parameters
@@ -293,7 +293,7 @@ GET /api/wallets/{id}/transactions/received
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/received
+curl https://api.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/received
 ```
 
 ### Path Parameters
@@ -399,7 +399,7 @@ GET /api/wallets/{id}/transactions/sent
 ### Example
 
 ```bash
-http://dexplorer.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/sent
+curl https://api.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/transactions/sent
 ```
 
 ### Path Parameters
@@ -501,7 +501,7 @@ GET /api/wallets/{id}/votes
 ### Example
 
 ```bash
-curl http://dexplorer.ark.io/api/wallets/DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t/votes
+curl https://api.ark.io/api/wallets/DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t/votes
 ```
 
 ### Path Parameters

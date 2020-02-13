@@ -17,7 +17,7 @@
 ### Example
 
 ```text
-curl http://dexplorer.ark.io/api/rounds/5000/delegates
+curl https://api.ark.io/api/rounds/5000/delegates
 ```
 
 ### Response

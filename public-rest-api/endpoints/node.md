@@ -18,6 +18,12 @@ Used to access a Node's configuration and the network it is attached to \(identi
 GET /api/node/configuration
 ```
 
+### Example
+
+```bash
+curl https://api.ark.io/api/node/configuration
+```
+
 ### Response
 
 ```javascript
@@ -90,6 +96,12 @@ Used to access a Node's configuration for the `@arkecosystem/crypto` package tha
 
 ```text
 GET /api/node/configuration/crypto
+```
+
+### Example
+
+```bash
+curl https://api.ark.io/api/node/configuration/crypto
 ```
 
 ### Response
@@ -272,6 +284,12 @@ Used to access a Node's fee statistics.
 GET /api/node/fees
 ```
 
+### Example
+
+```bash
+curl https://api.ark.io/api/node/fees
+```
+
 ### Query Parameters
 
 | Name | Type | Description | Required |
@@ -316,6 +334,12 @@ The status allows for health checking, showing if the node is in sync with the n
 GET /api/node/status
 ```
 
+### Example
+
+```bash
+curl https://api.ark.io/api/node/status
+```
+
 ### Response
 
 ```javascript
@@ -338,6 +362,12 @@ The `syncing` resource is very much alike `node/status`, providing information o
 GET /api/node/syncing
 ```
 
+### Example
+
+```bash
+curl https://api.ark.io/api/node/syncing
+```
+
 ### Response
 
 ```javascript
@@ -349,5 +379,54 @@ GET /api/node/syncing
     "id": "5444078994968869529"
   }
 }
+```
+
+## Node debug
+
+### Endpoint
+
+```bash
+GET /api/node/debug
+```
+
+### Response
+
+```bash
+[2020-02-04 08:46:35.849] INFO : Previous block 4,127,674 pinged blockchain 75 times
+[2020-02-04 08:46:35.849] DEBUG: event 'NEWBLOCK': "idle" -> "newBlock"
+[2020-02-04 08:46:35.851] DEBUG: Delegate genesis_40 (026a423b3323de175dd82788c7eab57850c6a37ea6a470308ebadd7007baf8ceb3) allowed to forge block 4,127,675
+[2020-02-04 08:46:35.856] DEBUG: event 'PROCESSFINISHED': "newBlock" -> "idle" -> actions: [checkLater, blockchainReady]
+[2020-02-04 08:46:36.470] INFO : Broadcasting block 4,127,675 to 129 peers
+[2020-02-04 08:46:44.108] INFO : Received new block at height 4,127,676 with 0 transactions from 167.114.43.33
+[2020-02-04 08:46:44.111] INFO : Previous block 4,127,675 pinged blockchain 93 times
+[2020-02-04 08:46:44.112] DEBUG: event 'NEWBLOCK': "idle" -> "newBlock"
+[2020-02-04 08:46:44.120] DEBUG: Delegate darkgalp (037997a6553ea8073eb199e9f5ff23b8f0892e79433ef35e13966e0a12849d02e3) allowed to forge block 4,127,676
+[2020-02-04 08:46:44.477] INFO : Broadcasting block 4,127,676 to 0 peers
+[2020-02-04 08:46:44.478] DEBUG: event 'PROCESSFINISHED': "newBlock" -> "idle" -> actions: [checkLater, blockchainReady]
+[2020-02-04 08:46:47.703] INFO : 116.203.31.18 has downloaded 400 blocks from height 4,016,181
+[2020-02-04 08:46:48.180] INFO : 213.49.134.118 has downloaded 400 blocks from height 4,016,181
+[2020-02-04 08:46:51.769] INFO : Received new block at height 4,127,677 with 0 transactions from 167.114.29.40
+[2020-02-04 08:46:51.775] INFO : Previous block 4,127,676 pinged blockchain 25 times
+[2020-02-04 08:46:51.776] DEBUG: event 'NEWBLOCK': "idle" -> "newBlock"
+[2020-02-04 08:46:51.872] DEBUG: Delegate splitice (02138ee0745083fd508c30c750e5e52d0e38a7f4efba8d86d4dd6f8ff12365b5d0) allowed to forge block 4,127,677
+[2020-02-04 08:46:52.420] INFO : Broadcasting block 4,127,677 to 0 peers
+[2020-02-04 08:46:52.421] DEBUG: event 'PROCESSFINISHED': "newBlock" -> "idle" -> actions: [checkLater, blockchainReady]
+[2020-02-04 08:46:59.455] INFO : Received new block at height 4,127,678 with 0 transactions from 167.114.43.42
+[2020-02-04 08:46:59.455] INFO : Previous block 4,127,677 pinged blockchain 59 times
+[2020-02-04 08:46:59.455] DEBUG: event 'NEWBLOCK': "idle" -> "newBlock"
+[2020-02-04 08:46:59.525] DEBUG: Delegate notsupercool (03ca6e1face6f6c934e0ade6f8a72aac7eaba3ac20bf78dbf04686715eb415021b) allowed to forge block 4,127,678
+[2020-02-04 08:46:59.700] INFO : Broadcasting block 4,127,678 to 0 peers
+[2020-02-04 08:46:59.701] DEBUG: event 'PROCESSFINISHED': "newBlock" -> "idle" -> actions: [checkLater, blockchainReady]
+[2020-02-04 08:47:00.526] INFO : 213.49.134.118 has downloaded 400 blocks from height 4,016,181
+[2020-02-04 08:47:06.948] INFO : Received new block at height 4,127,679 with 0 transactions from 167.114.29.46
+[2020-02-04 08:47:06.949] INFO : Previous block 4,127,678 pinged blockchain 20 times
+[2020-02-04 08:47:06.949] DEBUG: event 'NEWBLOCK': "idle" -> "newBlock"
+[2020-02-04 08:47:06.950] DEBUG: Delegate genesis_14 (03f3512aa9717b2ca83d371ed3bb2d3ff922969f3ceef92f65c060afa2bc2244fb) allowed to forge block 4,127,679
+[2020-02-04 08:47:06.960] DEBUG: event 'PROCESSFINISHED': "newBlock" -> "idle" -> actions: [checkLater, blockchainReady]
+[2020-02-04 08:47:07.534] INFO : Broadcasting block 4,127,679 to 129 peers
+[2020-02-04 08:47:16.286] INFO : Received new block at height 4,127,680 with 0 transactions from 167.114.29.59
+[2020-02-04 08:47:16.287] INFO : Previous block 4,127,679 pinged blockchain 53 times
+[2020-02-04 08:47:16.305] DEBUG: event 'NEWBLOCK': "idle" -> "newBlock"
+[2020-02-04 08:47:16.311] DEBUG: Delegate alexxio (0215789ac26155b7a338708f595b97c453e08918d0630c896cbd31d83fe2ad1c33) allowed to forge block 4,127,680
 ```
 

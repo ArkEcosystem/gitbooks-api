@@ -16,6 +16,12 @@ Returns all peers known by the Node. These are not necessarily all peers; only p
 GET /api/peers
 ```
 
+### Example
+
+```bash
+curl https://api.ark.io/api/peers
+```
+
 ### Query Parameters
 
 | Name | Type | Description | Required |
