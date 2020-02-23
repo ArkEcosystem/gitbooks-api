@@ -16,11 +16,11 @@ curl https://api.ark.io/api/businesses
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| page | int | The number of the page that will be returned. | false |
-| limit | int | The number of resources per page. | false |
-| orderBy | string | Type by which it orders businesses. | false |
-| publicKey | string | The publicKey of a transaction which submitted the business. | false |
-| isResigned | boolean | If business is resigned or not. | false |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders businesses. | No |
+| publicKey | string | The publicKey of a transaction which submitted the business. | No |
+| isResigned | boolean | If business is resigned or not. | No |
 
 ### Response
 
@@ -81,7 +81,7 @@ curl https://api.ark.io/api/businesses/D991ZqskaGWMDu9kpfpJr5LRssV7ek981k
 
 | Name  | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| walletAddress | string | The identifier of the wallet to be retrieved. | true |
+| walletAddress | string | The identifier of the wallet to be retrieved. | Yes |
 
 ### Response
 
@@ -115,16 +115,16 @@ curl https://api.ark.io/api/businesses/DEHyKHdtzHqTghfpwaBcvTzLpgPP5AAUgE/bridge
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| walletAddress | string | The identifier of the wallet to be retrieved. | true |
+| walletAddress | string | The identifier of the wallet to be retrieved. | Yes |
 
 ### Query Parameters <a id="query-parameters"></a>
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| page | int | The number of the page that will be returned. | false |
-| limit | int | The number of resources per page. | false |
-| orderBy | string | Type by which it orders business. | false |
-| isResigned | boolean | If business is resigned or not. | false |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders business. | No |
+| isResigned | boolean | If business is resigned or not. | No |
 
 ### Response
 
@@ -186,21 +186,21 @@ POST /api/businesses/search
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| page | int | The number of the page that will be returned. | false |
-| limit | int | The number of resources per page. | false |
-| orderBy | string | Type by which it orders business. | false |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders business. | No |
 
 ### Body parameters
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| address | string | ... | false |
-| publicKey | string | ... | false |
-| name | string | ... | false |
-| website | string | ... | false |
-| vat | string | ... | false |
-| repository | string | ... | false |
-| isResigned | boolean | ... | false |
+| address | string | ... | No |
+| publicKey | string | ... | No |
+| name | string | ... | No |
+| website | string | ... | No |
+| vat | string | ... | No |
+| repository | string | ... | No |
+| isResigned | boolean | ... | No |
 
 ### Response
 

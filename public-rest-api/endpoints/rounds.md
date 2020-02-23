@@ -12,7 +12,7 @@
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| roundNumber | int | The number of wanted round. | true |
+| roundNumber | int | The number of wanted round. | Yes |
 
 ### Example
 

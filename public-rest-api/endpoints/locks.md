@@ -20,17 +20,17 @@ curl https://dexplorer.ark.io/api/locks
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| page | int | The number of the page that will be returned. | false |
-| limit | int | The number of resources per page. | false |
-| orderBy | string | Type by which it orders locks. | false |
-| recipientId | string | ... | false |
-| senderPublicKey | string | ... | false |
-| lockId | string | ... | false |
-| secretHash | string | ... | false |
-| amount | int | ... | false |
-| expirationValue | int | ... | false |
-| expirationType | int | ... | false |
-| isExpired | boolean | ... | false |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders locks. | No |
+| recipientId | string | ... | No |
+| senderPublicKey | string | ... | No |
+| lockId | string | ... | No |
+| secretHash | string | ... | No |
+| amount | int | ... | No |
+| expirationValue | int | ... | No |
+| expirationType | int | ... | No |
+| isExpired | boolean | ... | No |
 
 ### Response
 
@@ -129,24 +129,24 @@ GET api/locks/search
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| page | int | The number of the page that will be returned. | false |
-| limit | int | The number of resources per page. | false |
-| orderBy | string | Type by which it orders locks. | false |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders locks. | No |
 
 ### Body parameters
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| recipientId | string | ... | false |
-| senderPublicKey | string | ... | false |
-| lockId | string | ... | false |
-| secretHash | string | ... | false |
-| amount | int | ... | false |
-| timestamp | int | ... | false |
-| vendorField | string | ... | false |
-| expirationType | int | ... | false |
-| expirationValue | int | ... | false |
-| isExpired | boolean | ... | false |
+| recipientId | string | ... | No |
+| senderPublicKey | string | ... | No |
+| lockId | string | ... | No |
+| secretHash | string | ... | No |
+| amount | int | ... | No |
+| timestamp | int | ... | No |
+| vendorField | string | ... | No |
+| expirationType | int | ... | No |
+| expirationValue | int | ... | No |
+| isExpired | boolean | ... | No |
 
 ### Response
 
@@ -210,13 +210,13 @@ api/locks/unlocked
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| page | int | The number of the page that will be returned. | false |
-| limit | int | The number of resources per page. | false |
-| orderBy | string | Type by which it orders locks. | false |
+| page | int | The number of the page that will be returned. | No |
+| limit | int | The number of resources per page. | No |
+| orderBy | string | Type by which it orders locks. | No |
 
 ### Body parameters
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| ids | array | Array of lock ids | true |
+| ids | array | Array of lock ids | Yes |
 
