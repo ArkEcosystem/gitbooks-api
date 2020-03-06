@@ -176,6 +176,33 @@ curl https://api.ark.io/api/businesses/DEHyKHdtzHqTghfpwaBcvTzLpgPP5AAUgE/bridge
 }
 ```
 
+## Return bridgechain of a business
+
+```javascript
+GET /api/businesses/{businessId}/bridgechains/{bridgechainId}
+```
+
+### Example
+
+```javascript
+curl https://api.ark.io/api/businesses/03c6f8546a296ad828f64b4cc0e343acf93012717b6297dd33208912553be869c9/bridgechains/2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867
+```
+
+### Path parameters
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| businessId | string | The identifier of a business | true |
+| bridgechainId | string | The identifier of a bridgechian to be retrieved | true |
+
+### Query Parameters <a id="query-parameters"></a>
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| page | int | The number of the page that will be returned. | false |
+| limit  | int  | The number of resources per page. | false |
+| orderBy | string | Type by which it orders bridgechains. | false |
+
 ## Search business
 
 ```bash

@@ -803,3 +803,4 @@ curl https://api.ark.io/api/wallets/DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t/locks
     ]
 }
 ```
+
