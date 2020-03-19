@@ -14,7 +14,7 @@ Before we start working on the implementation of a webhook handler, we will take
 
 To guarantee that only your server is allowed to send data to your webhook handler, an authorization token is generated on creation of a webhook. **The generated token will only be returned once and not be visible again.**
 
-To generate an authorization token, you need to [create a webhook](https://github.com/ArkEcosystem/gitbooks-api/tree/9815499ca52e615b8de858160da915cd960e6ea3/webhooks/webhook-endpoints/README.md#create-a-webhook).
+To generate an authorization token, you need to [create a webhook](https://api.ark.dev/webhook-api/endpoints#create-a-webhook).
 
 Lets take the following token as an example `fe944e318edb02b979d6bf0c87978b640c8e74e1cbfe36404386d33a5bbd8b66` which is 64 characters long and breaks down into 2 parts at 32 characters length each.
 
