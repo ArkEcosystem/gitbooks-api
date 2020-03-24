@@ -269,6 +269,15 @@ For fine-grained searches, use the `search` endpoint. Note that unless you use s
 POST /api/transactions/search
 ```
 
+### Example
+
+```bash
+curl -H "Content-Type: application/json" \
+  -X POST \
+  -d '{ "asset": { "ipfs": "QmT2yUde9NFsX6J7y97VGu8CeA5tLEshu5V7PVHeRqUcDA" } }' \
+  https://api.ark.io/api/transactions/search | jq
+```
+
 ### Query Parameters
 
 | Name | Type | Description | Required |
@@ -299,6 +308,7 @@ POST /api/transactions/search
 | fee | object | ... | No |
 | fee.from | int | ... | No |
 | fee.to | int | ... | No |
+| asset | object | ... | No |
 
 ### Response
 
