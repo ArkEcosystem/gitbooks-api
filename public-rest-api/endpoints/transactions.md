@@ -263,6 +263,10 @@ GET /api/transactions/unconfirmed/{id}
 
 For fine-grained searches, use the `search` endpoint. Note that unless you use specific body parameters, the response might contain a large number of transactions \(hundreds of thousands\). It is best to filter as many transactions node side, instead of dissecting the response client side.
 
+{% hint style="info" %}
+**Asset** field can be searched with this transaction endpoint \(see example below\). All the fields introduced with custom transaction \(or existing ones\) are searchable by default.
+{% endhint %}
+
 ### Endpoint
 
 ```text
