@@ -8,7 +8,7 @@ This is a reference guide for the available Core API's. API's expose different r
 
 1. [Public REST API](public-rest-api/getting-started.md)
 2. [Webhook API](webhook-api/getting-started.md)
-3. [Crypto JSON-RPC](crypto-json-rpc/getting-started.md)
+3. [Crypto JSON-RPC]()
 4. [Elasticsearch API](elasticsearch-api/getting-started.md)
 
 {% hint style="info" %}

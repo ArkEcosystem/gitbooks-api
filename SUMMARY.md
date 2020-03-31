@@ -26,13 +26,6 @@
 * [Usage](webhook-api/usage.md)
 * [Endpoints](webhook-api/endpoints.md)
 
-## Crypto JSON-RPC
-
-* [Getting Started](crypto-json-rpc/getting-started.md)
-* [Endpoints](crypto-json-rpc/endpoints/README.md)
-  * [Transactions](crypto-json-rpc/endpoints/transactions.md)
-  * [Identities](crypto-json-rpc/endpoints/identities.md)
-
 ## Elasticsearch API
 
 * [Getting Started](elasticsearch-api/getting-started.md)
