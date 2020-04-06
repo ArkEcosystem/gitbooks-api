@@ -6,10 +6,6 @@ description: This page provides reference guides and overview of available Core 
 
 This is a reference guide for the available Core API's. API's expose different resources and data provided by the Core Server \(Node\). Based on the Core Server configuration \(enabled core modules\) we can configure different array of services, such as:
 
-1. \*\*\*\*[**Public REST API**](public-rest-api/getting-started.md)\*\*\*\*
-2. \*\*\*\*[**Webhook API**](webhook-api/getting-started.md)\*\*\*\*
-3. \*\*\*\*[**Elasticsearch API**](elasticsearch-api/getting-started.md)\*\*\*\*
-
 If you are looking for ARK JSON-RPC documentation head over to our [**JSON-RPC** **section**](https://exchange.ark.dev/json-rpc/getting-started)**.**
 
 {% hint style="info" %}
