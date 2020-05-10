@@ -7,7 +7,7 @@
 ## List all locks
 
 ```text
-GET api/locks
+GET /api/locks
 ```
 
 ### Example
@@ -87,7 +87,7 @@ curl https://dexplorer.ark.io/api/locks
 ## Return lock by id
 
 ```text
-GET api/locks/{lockId}
+GET /api/locks/{lockId}
 ```
 
 ### Example
@@ -122,7 +122,7 @@ curl https://dexplorer.ark.io/api/locks/0d65f66631e90d71242fc7c09e9e86b68248b546
 ## Search locks
 
 ```text
-GET api/locks/search
+GET /api/locks/search
 ```
 
 ### Query Parameters
